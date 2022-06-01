@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "sql535.main-hosting.eu",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "traducciones",
+            "username": "u210833393_victor",
+            "database": "u210833393_traducciones",
+            "password": "Abogado2020$"
+        }
+    ]
+}
