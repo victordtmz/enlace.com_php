@@ -35,6 +35,7 @@
     // LIMIT 400;"
     // $sql = "SELECT * FROM traducciones LIMIT 50;";
     $trad_records = mysqli_query($db, $sql);
+    confirm_result_set($trad_records);
 ?>
 
 <div id="content">
