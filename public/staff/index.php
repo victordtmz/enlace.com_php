@@ -1,7 +1,8 @@
 <?php 
     $page_title = 'Staff Menu'; 
     require_once('../../private/initialize.php'); 
-    include(SHARED_PATH . '/staff_header.php');
+    $menu_items = $menu_staff;
+    include(SHARED_PATH . '/header.php');
 ?>
 
 <div id="content">
@@ -16,5 +17,5 @@
 </div>
 
 <?php 
-    include(SHARED_PATH . '/staff_footer.php');
+    include(SHARED_PATH . '/footer.php');
 ?>

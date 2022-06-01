@@ -1,6 +1,12 @@
-<?php if(!isset($page_title)){
-    $page_title = 'Staff Area';
-} ?>
+<?php 
+    if(!isset($page_title)){
+        $page_title = 'Staff Area';
+        } 
+    if(!isset($menu_items)){
+        $menu_items = array(
+            "Menu" => '/index.php');
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +27,13 @@
           <!-- <h3 class="logo-txt">Enlace</h3> -->
       </div>
       <ul class="nav-links dark">
-        <li><a href="<?php echo url_for('/public/staff/index.php'); ?>">Inicio</a></li>
-        <li><a href="contact.htm">Contacto</a></li>
+        <?php 
+            foreach ($menu_items as $key => $value){
+                echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
+            }
+        ?>  
+        <!-- <li><a href="<?php echo url_for('/public/staff/index.php'); ?>">Inicio</a></li>
+        <li><a href="contact.htm">Contacto</a></li> -->
       </ul>
       <div class="burger">
           <div class="line1"></div>
@@ -34,7 +45,12 @@
     
     <navigation>
         <ul>
-            <li><a href="<?php echo url_for('/public/staff/index.php'); ?>">Menu</a></li>
+            <?php 
+                foreach ($menu_items as $key => $value){
+                    echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
+                }
+            ?>    
+        
             
         </ul>
     </navigation> 

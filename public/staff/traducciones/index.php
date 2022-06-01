@@ -1,9 +1,10 @@
 
 <?php 
     require_once('../../../private/initialize.php'); 
+    $menu_items = $menu_staff;
     //page title will show on browser tab
     $page_title = 'Subjects'; 
-    include(SHARED_PATH . '/staff_header.php');
+    include(SHARED_PATH . '/header.php');
     
     //create db connection
     $db = tdb_connect();

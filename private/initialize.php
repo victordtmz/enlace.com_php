@@ -15,4 +15,15 @@
     require_once('functions.php');
     require_once('database.php');
     require_once('db_queries.php');
+    
+    $menu_home = array(
+        "Inicio" => '/index.php',
+        "Staff" => 'staff/index.php',
+    );
+    
+    $menu_staff = array(
+        "Inicio" => '/index.php',
+        "Staff" => 'public/staff/index.php',
+        "Traducciones" => 'public/staff/traducciones/index.php'
+    );
 ?>
