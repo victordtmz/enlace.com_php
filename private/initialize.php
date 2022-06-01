@@ -18,12 +18,17 @@
     
     $menu_home = array(
         "Inicio" => '/index.php',
-        "Staff" => 'staff/index.php',
+        "Staff" => 'public/staff/index.php',
+        "Ajax" => 'ajaxTest/index.php'
     );
     
-    $menu_staff = array(
-        "Inicio" => '/index.php',
-        "Staff" => 'public/staff/index.php',
-        "Traducciones" => 'public/staff/traducciones/index.php'
-    );
+    $menu_staff = $menu_home;
+    $menu_staff["Traducciones"] = 'public/staff/traducciones/index.php';
+    // $menu_staff = array_push($menu_home, "Traducciones" => 'public/staff/traducciones/index.php' );
+    
+//     $menu_staff = array(
+//         "Inicio" => '/index.php',
+//         "Staff" => 'public/staff/index.php',
+//         "Traducciones" => 'public/staff/traducciones/index.php'
+//     );
 ?>

@@ -14,10 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enlace LLC Personal - <?php echo h($page_title);?></title>
-    <link rel="stylesheet" media="all" href="<?php echo url_for('public/stylesheets/staff.css'); ?>">
+    <!-- <link rel="stylesheet" media="all" href="<?php echo url_for('public/stylesheets/staff.css'); ?>"> -->
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/styles.css'); ?>">
     <link rel="icon" type="images/x-icon" href="<?php echo url_for('private/images/enlace.ico'); ?>">
     <script src="<?php echo url_for('private/js/header.js'); ?>" defer></script>
+    <script src="<?php echo url_for('private/js/scripts.js'); ?>" defer></script>
 </head>
 <body>
 <header>
@@ -43,14 +44,20 @@
   </nav>
 </header>
     
-    <navigation>
-        <ul>
-            <?php 
-                foreach ($menu_items as $key => $value){
-                    echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
-                }
-            ?>    
+<navigation>
+    <ul>
+        <?php 
+            foreach ($menu_items as $key => $value){
+                echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
+            }
+        ?>    
+    
         
-            
-        </ul>
-    </navigation> 
+    </ul>
+</navigation> 
+<section class="inicio">
+    <div class="content_wrap">
+        <h1>Enlace LLC</h1>
+        <h2><?php echo $page_title ?></h2>
+    </div>
+</section>

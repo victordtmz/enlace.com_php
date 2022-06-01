@@ -358,9 +358,22 @@ nav{
 }
 
  
-
+/*1024 - Desctop - Max Screen Size
+---------------------------------------------------------------------------*/
 @media screen and (min-width:1024px){
-  
+  .db-form{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    /* flex-wrap: non; */
+  }
+  /* .db-list{
+    max-width: 500px; 
+  }
+  .db-details{
+
+  } */
+
   .sec-items{
     margin-right: 2%;
     /* background-color: gold; */
