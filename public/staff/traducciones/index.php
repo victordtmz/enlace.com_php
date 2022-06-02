@@ -42,7 +42,6 @@
             <td><?php echo h($record['Titular']); ?></td>
             <td><?php echo h($record['Tipo']); ?></td>
             <td><?php echo h($record['Fecha']); ?></td>
-            <input type="submit" name="populate"/>
             <td><a class="action" target="form-details" href="<?php echo url_for('public/staff/traducciones/show.php?id=' . $record['id']); ?>">View</a></td>
             <!-- <td><a class="action" href="">Edit</a></td>
             <td><a class="action" href="">Delete</a></td> -->
@@ -52,24 +51,24 @@
       <?php mysqli_free_result($trad_records);?>
   </div>
   <form action="" class="db-details" method="post">
-    <div class="form-row">
+    <!-- <div class="form-row">
       <label for="txtId">Id: </label>
       <input type="text" name="txtId">
-    </div>
-    <div class="form-row">
+    </div> -->
+    <!-- <div class="form-row">
       <label for="txtFolio">Folio: </label>
       <input type="text" name="txtFolio">
       
     </div>
     <button id="1973" onclick="replaceText('1973')">Ajax Text</button>
-    <Button type="submit" name="populate"/>
-    <!-- <?php 
-      // if(isset($_POST['populate'])){
-      //   echo "Button is working"; 
-      //   echo $_POST['populate'];
-      // }
-    ?> -->
-    <!-- <iframe name="form-details" frameborder="0" src="<?php echo url_for('public/staff/traducciones/show.php'); ?>"></iframe> -->
+    <Button type="submit" name="populate"/> -->
+    <?php 
+      if(isset($_POST['populate'])){
+        echo "Button is working"; 
+        echo $_POST['populate'];
+      }
+    ?>
+    <iframe name="form-details" frameborder="0" src="<?php echo url_for('public/staff/traducciones/show.php'); ?>"></iframe>
     </form>
 </section>
 

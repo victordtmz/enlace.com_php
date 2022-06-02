@@ -356,7 +356,38 @@ nav{
   margin: -40px 0 40px 0;
   /* margin-bottom: 20px; */
 }
+/*1024 - Desctop - Max Screen Size
+---------------------------------------------------------------------------*/
+.db-form{
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  /* flex-wrap: non; */
+}
+.tradShow{
+  background-color: #cf9e7f;
+}
 
+.db-list{
+  width: 45%;
+  max-height: 1200px; 
+  overflow: scroll;
+  border: #17282e;
+  border-width: 1px;
+  border-style: solid;
+}
+.db-details{
+  height: 1200px;
+  width: 45%;
+  border: #17282e;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.db-details iframe{
+  width: 100%;
+  height: 1200px;
+}
  
 /*1024 - Desctop - Max Screen Size
 ---------------------------------------------------------------------------*/

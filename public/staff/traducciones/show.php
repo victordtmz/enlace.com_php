@@ -1,19 +1,46 @@
-<!-- <?php require_once('../../../private/initialize.php'); ?>
+<?php require_once('../../../private/initialize.php'); ?>
 <?php
     // $id = $_GET['id'];
-    // $id = $_GET['id'] ?? '1';
-    // $sql = "SELECT * FROM traducciones WHERE id = '$id'";
-    // $db = tdb_connect();
-    // $trad_records = mysqli_query($db, $sql);
-    // confirm_result_set($trad_records);
-    // $record = mysqli_fetch_assoc($trad_records);
-    // mysqli_free_result($trad_records);
-?> -->
+    $id = $_GET['id'] ?? '1';
+    $sql = "SELECT * FROM traducciones WHERE id = '$id'";
+    $db = tdb_connect();
+    $trad_records = mysqli_query($db, $sql);
+    confirm_result_set($trad_records);
+    $record = mysqli_fetch_assoc($trad_records);
+    mysqli_free_result($trad_records);
+?> 
 
-<!-- <div class="tradShow">
+<table>
+  <tr>
+    <td>Id:</td>
+    <td><?php echo $record['id'] ?></td>
+  </tr>
+  <tr>
+    <td>Folio:</td>
+    <td><?php echo $record['folio'] ?></td>
+  </tr>
+  <tr>
+    <td>Id:</td>
+    <td><?php echo $record['id'] ?></td>
+  </tr>
+</table>
+
+<div class="db-details-form">
+  <div class="form-row">
+    <label for="tradId">Id:</label>
+    <input type="text" name="tradId" id="tradId" value="<?php echo $record['id'] ?>">
+  </div>
+  <div class="form-row">
+    <label for="tradFolio">Folio:</label>
+    <input type="text" name="tradFolio" id="tradFolio" value="<?php echo $record['folio']?>">
+  </div>
+</div>
+
+
+<div class="tradShow">
     <h3>Id: <?php echo h($record['id']); ?></h3>
     <h3>Id: <?php echo h($record['folio']); ?></h3>
-</div> -->
+</div>
 <section class="contact">
         <div class="content_wrap">
           <form id="contact" method="post" action="" class="dark" onsubmit="sendEmail(); reset(); return false;">
