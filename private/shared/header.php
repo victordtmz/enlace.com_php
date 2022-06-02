@@ -44,20 +44,4 @@
   </nav>
 </header>
     
-<navigation>
-    <ul>
-        <?php 
-            foreach ($menu_items as $key => $value){
-                echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
-            }
-        ?>    
-    
-        
-    </ul>
-</navigation> 
-<section class="inicio">
-    <div class="content_wrap">
-        <h1>Enlace LLC</h1>
-        <h2><?php echo $page_title ?></h2>
-    </div>
-</section>
+

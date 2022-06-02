@@ -43,6 +43,28 @@ h6{
   text-align: center;
 }
 
+/* Lists */
+
+table {
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+table.list {
+  width: 100%;
+}
+
+table.list tr td {
+  border: 1px solid #999999;
+}
+
+table.list tr th {
+  border: 1px solid #0055DD;
+  background: #0055DD;
+  color: white;
+  text-align: left;
+}
+
 
 /*global styles
 ---------------------------------------------------------*/
@@ -215,7 +237,7 @@ nav{
 /*Inicio
 ---------------------------------------------------------*/
 .inicio{
-  padding-top: 12vh;
+  padding-top: 10vh; 
   background: #17282e;
   color: #ebe6e3;
   width: 100%;
