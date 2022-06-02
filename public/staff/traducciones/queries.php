@@ -38,20 +38,25 @@
         return $records;
     }
     function select_trad_list(){
-        // // 3 lines for testing
-        $filter_year = $_POST['trad-fyear'];
-        if($filter_year){
-            echo $filter_year;
-        }else{
-            echo "False";
-        }
-        // echo "This is  some text";
-        // echo $filter_year;
-
-
+        $filter_year = $_POST['trad-fyear'] ?? date('Y'); 
+        $search = $_POST['trad-search'] ?? ""; 
+        $search = "%" . $search . "%"; 
+        // echo $search;
         global $table;
         global $selectList;
-        $selectList .= $table . " WHERE YEAR(IFNULL(fecha, '')) LIKE $filter_year ORDER BY fecha DESC, folio DESC;";
+        $selectList .= $table . " WHERE id LIKE '$search'";
+        $selectList .= " AND YEAR(IFNULL(fecha, '')) LIKE $filter_year";
+
+        $selectList .= " OR CONCAT(LPAD(folio,4,0), '/', YEAR(fecha)) LIKE '$search'";
+        $selectList .= " AND YEAR(IFNULL(fecha, '')) LIKE $filter_year";
+
+        $selectList .= " OR titular LIKE '$search'";
+        $selectList .= " AND YEAR(IFNULL(fecha, '')) LIKE $filter_year";
+
+        $selectList .= " OR Folio LIKE '$search'";
+        $selectList .= " AND YEAR(IFNULL(fecha, '')) LIKE $filter_year";
+        $selectList .= " ORDER BY fecha DESC, folio DESC;"; 
+        // echo $selectList;
         $records = select_records($selectList);
         return $records;
     }

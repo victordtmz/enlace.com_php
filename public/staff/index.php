@@ -2,7 +2,7 @@
     $page_title = 'Staff Menu'; 
     require_once('../../private/initialize.php'); 
     $menu_items = $menu_staff;
-    include(SHARED_PATH . '/header.php');
+    include(SHARED_PATH . '/header_staff.php');
 ?>
 
 <div id="content">

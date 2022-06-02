@@ -10,7 +10,8 @@ if ($test == '404'){
     redirect_to( url_for('/public/staff/subjects/index.php'));
     
 }
-else {
-    echo 'No error';
-}
+    $menu_items = $menu_staff;
+    //page title will show on browser tab
+    $page_title = 'Traducciones'; 
+    include(SHARED_PATH . '/header_staff.php');
 ?>

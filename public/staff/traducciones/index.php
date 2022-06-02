@@ -4,24 +4,25 @@
     $menu_items = $menu_staff;
     //page title will show on browser tab
     $page_title = 'Traducciones'; 
-    include(SHARED_PATH . '/header_staff.php');
+    include(SHARED_PATH . '/header.php');
+    
 ?>
-<section class="db-list">
+<section class="inicio">
   <form method="post" class="filters">
     <label for="trad-fyear">Año:</label>
     <select name="trad-fyear" id="trad-fyear">
-        <option value="">--Seleccione año--</option>
-        <option value="2022">2022</option>
-        <option value="2021">2021</option>
-        <option value="2020">2020</option>
-        <option value="2019">2019</option>
-        <option value="2018">2018</option>
-        <option value="2017">2017</option>
-        <option value="2016">2016</option>
-        <option value="2015">2015</option>
+        <?php 
+        for($y = date('Y'); $y > 2014; $y--){
+          echo "<option value='$y'>$y</option>";
+        } ?>
     </select>
+    <label for="trad-search">Busqueda:</label>
+    <input type="search" name="trad-search">
     <input type="submit" name="trad-list-apply" value="Obtener Registros">
   </form>
+</section>
+<section class="db-list">
+  
   
 
     <?php 
@@ -60,10 +61,12 @@
     
     if(isset($_POST['trad-list-apply'])){
       requery();
-      include(SHARED_PATH . '/footer.php');
     }else{
-      include(SHARED_PATH . '/footer.php');
+      requery();
     }
+    // 
+      
+    
     
   ?>
 </section>
