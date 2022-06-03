@@ -7,18 +7,28 @@
     include(SHARED_PATH . '/header.php');
     
 ?>
-<section class="inicio">
+<div class="list-filters">
+<section class="inicio sub-nav">
   <form method="post" class="filters">
-    <label for="trad-fyear">Año:</label>
-    <select name="trad-fyear" id="trad-fyear">
-        <?php 
-        for($y = date('Y'); $y > 2014; $y--){
-          echo "<option value='$y'>$y</option>";
-        } ?>
-    </select>
-    <label for="trad-search">Busqueda:</label>
-    <input type="search" name="trad-search">
-    <input type="submit" name="trad-list-apply" value="Obtener Registros">
+  <div class="form-set">
+      <label for="trad-fyear">Año:</label>
+      <select name="trad-fyear" id="trad-fyear">
+          <?php 
+          for($y = date('Y'); $y > 2014; $y--){
+            echo "<option value='$y'>$y</option>";
+          } ?>
+      </select>
+    </div>
+
+    <div class="form-set">
+      <label for="trad-search">Busqueda:</label>
+      <input type="search" name="trad-search">
+    </div>
+    
+    <div class="form-set">
+      <input type="submit" name="trad-list-apply" value="Obtener Registros">
+    </div>
+    
   </form>
 </section>
 <section class="db-list">
@@ -33,18 +43,19 @@
       <th>Folio</th>
       <th>Titular</th>
       <th>Tipo</th>
+      <!-- <th>&nbsp;</th>
       <th>&nbsp;</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
+      <th>&nbsp;</th> -->
     </tr> 
     <?php
       $trad_records = select_trad_list();
       while($record = mysqli_fetch_assoc($trad_records)) { ?>
       <tr>
-        <td><?php echo h($record['Folio']); ?></td>
+        <td><a class="list-action" href="<?php echo url_for('public/staff/traducciones/show.php?id=' . $record['id']); ?>"><?php echo h($record['Folio']); ?></a></td>
+        <!-- <td><?php echo h($record['Folio']); ?></td> -->
         <td><?php echo h($record['Titular']); ?></td>
         <td><?php echo h($record['Tipo']); ?></td>
-        <td><a class="action" href="<?php echo url_for('public/staff/traducciones/show.php?id=' . $record['id']); ?>">View</a></td>
+        
         <!-- <td><a class="action" href="">Edit</a></td>
         <td><a class="action" href="">Delete</a></td> -->
       </tr>
@@ -70,5 +81,6 @@
     
   ?>
 </section>
+</div>
 
     

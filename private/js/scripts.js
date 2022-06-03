@@ -29,22 +29,22 @@ const sendEmail = () => {
 }
 
 
-const replaceText = (string) =>{
-    var target = document.getElementById("main");
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'new_content.txt', true);
-    xhr.onreadystatechange = function () {
-        if(xhr.readyState == 2){
-            target.innerHTML = 'Loading...';
-        }
-        if(xhr.readyState == 4 && xhr.status == 200){
+// const replaceText = (string) =>{
+//     var target = document.getElementById("main");
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', 'new_content.txt', true);
+//     xhr.onreadystatechange = function () {
+//         if(xhr.readyState == 2){
+//             target.innerHTML = 'Loading...';
+//         }
+//         if(xhr.readyState == 4 && xhr.status == 200){
             
-            target.innerHTML = xhr.responseText;
-        }
-    }
+//             target.innerHTML = xhr.responseText;
+//         }
+//     }
 
-    xhr.send();
+//     xhr.send();
 
-}
-var button = document.getElementById('ajax-button');
-button.addEventListener("click", replaceText);
+// }
+// var button = document.getElementById('ajax-button');
+// button.addEventListener("click", replaceText);
