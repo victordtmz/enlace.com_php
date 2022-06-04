@@ -180,7 +180,7 @@ input, textarea {
 
 input:focus, textarea:focus{
   outline: none;
-  box-shadow: 0 0 10px green;
+  box-shadow: 0 0 5px green;
 }
 
 select{

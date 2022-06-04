@@ -17,7 +17,7 @@
     function h($string=""){
         return htmlspecialchars($string);
     }
-
+ 
     function error_404(){
         header($_SERVER["SERVER_PROTOCOL"] . " 404 Not found");
         exit();

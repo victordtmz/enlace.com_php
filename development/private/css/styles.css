@@ -497,7 +497,7 @@ header{
   border-style: solid;
 }
 
-.g-recaptcha{
+.g-recaptcha-response{
   /* margin: 0 0 0 10; */
   padding: 0;
   margin: -40px 0 40px 0;
