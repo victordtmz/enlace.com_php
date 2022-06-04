@@ -17,12 +17,12 @@
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         //    $mail->SMTPDebug = 2;
-        $mail->Host = 'smtp.flockmail.com';
+        $mail->Host = 'TITAN_HOST';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->SMTPAuth = true;
-        $mail->Username = 'admin@enlacellc.com';
-        $mail->Password = 'Abogado2020$';
+        $mail->Username = 'TITAN_USER';
+        $mail->Password = 'TITAN_PWD';
         
         $mail->isHTML(true);
     }
