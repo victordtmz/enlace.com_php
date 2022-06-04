@@ -39,7 +39,7 @@
           <label for="contact-inquiry">Consulta*: </label>
           <textarea name="contact-inquiry" id="contact-inquiry" cols="30" rows="5" placeholder="En que te podemos ayudar" required aria-required="true"></textarea>
         </div>
-        <div class="g-recaptcha"  name="g-recaptcha-response"  data-sitekey="6Ld24i8gAAAAAOIxE-gSZEPWw8k-OiYwilMzapT5"></div>
+        <div class="g-recaptcha"  name="g-recaptcha-response"  data-sitekey="CAPTCHA_SITE_KEY"></div>
         
         <input type="submit" value="Enviar" name="submit">
         <div class="status">
@@ -64,25 +64,23 @@
           $headers = "From: $email_from\r\n";
           $headers .= "Reply-to: $User_email\r\n";
 
-          // $secretKey = "6Ld24i8gAAAAAA1HGWcTy1ctP1BkC2EbGBIH8ZhL";
-          // $responseKey = $_POST['g-recaptcha-response'];
-          // $UserIP = $_SERVER['REMOTE_ADDR'];
-          // $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
+          $secretKey = "CAPTCHA_SECRET_KEY";
+          $responseKey = $_POST['g-recaptcha-response'];
+          $UserIP = $_SERVER['REMOTE_ADDR'];
+          $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
 
-          // $response = file_get_contents(u($url));
-          // $response = json_decode($response);
-          mailerOpen();
-          mailerSend();
-          mailerClose();
-          // mail($email_to, $email_subject, $email_body, $headers);
-          // echo "Mensaje enviado correctamente";
+          $response = file_get_contents(u($url));
+          $response = json_decode($response);
+          
+          
 
-          // if ($response->success){
-          //   mail($email_to, $email_subject, $email_body, $headers);
-          //   echo "Mensaje enviado correctamente";
-          // } else{
-          //   echo "<span>Captcha invalido, intenta nuevamente</span>";
-          // }
+          if ($response->success){
+            mailerOpen();
+            mailerSend();
+            mailerClose();
+          } else{
+            echo "<span>Captcha invalido, intenta nuevamente</span>";
+          }
 
           
 
