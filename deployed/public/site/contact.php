@@ -4,6 +4,7 @@
     $page_title = 'Contacto'; 
     // $menu_items = $menu_home;
     include(SHARED_PATH . '/header.php');
+    
 ?>
 <!-- INICIO - GREEN BKGND WITH TITLE -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -44,6 +45,7 @@
         <div class="status">
       <?php
         if(isset($_POST['submit'])){
+          include(PRIVATE_PATH . '/phpMailer/config.php');
           
           $User_name = $_POST['contact-name'];
           echo $User_name;
@@ -69,9 +71,11 @@
 
           // $response = file_get_contents(u($url));
           // $response = json_decode($response);
-
-          mail($email_to, $email_subject, $email_body, $headers);
-          echo "Mensaje enviado correctamente";
+          mailerOpen();
+          mailerSend();
+          mailerClose();
+          // mail($email_to, $email_subject, $email_body, $headers);
+          // echo "Mensaje enviado correctamente";
 
           // if ($response->success){
           //   mail($email_to, $email_subject, $email_body, $headers);
