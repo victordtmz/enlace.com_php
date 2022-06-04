@@ -183,6 +183,9 @@ label{
 /*FOOTER
 ---------------------------------------------------------*/
 footer{
+  /* position: fixed;
+  bottom: 0;
+  width: 100%; */
   background : #17282e;
   display: flex;
   align-items: center;
@@ -227,8 +230,11 @@ header{
   width: 100%;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
 }
-
-nav{
+.content{
+  padding-top:8vh;
+  /* min-height: 1200px; */
+}
+.nav-main{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -247,7 +253,7 @@ nav{
   position: absolute;
   right: 0px;
   height: 30vh;
-  top: 12vh;
+  top: 8vh;
   display: flex;
   flex-direction: column;
   background-color: #17282e;
@@ -260,7 +266,8 @@ nav{
 .nav-links li a{
   font-size: 1.2rem;
   letter-spacing: 1px;
-  color: #ebe6e3;
+  font-weight: 500;
+  /* color: #ebe6e3; */
 }
 .nav-active{
   
@@ -319,18 +326,18 @@ nav{
 }
 /*FORM ONLY DISPLAY
 -----------------------------------------------------------------*/
-.top {
+/* .top {
   padding-top: 12vh;
   
-}
-.display-form{
+} */
+.form-box{
   background-color: #ececec;
   padding: 2rem;
   width: 700px;
   margin: 1rem auto;
   border-radius: 20px;
 }
-.display-form table{
+.form-box table{
   margin: 0 auto;
 }
 
@@ -355,7 +362,7 @@ nav{
 /*Inicio
 ---------------------------------------------------------*/
 .inicio{
-  padding-top: 12vh;
+  /* padding-top: 12vh; */
   background: #17282e;
   color: #ebe6e3;
   width: 100%;
@@ -401,7 +408,7 @@ nav{
 }
 .contact{
   /* background-color: #ebe6e37e; */
-  padding-top: 12vh;
+  /* padding-top: 12vh; */
   padding-bottom: 1vh;
   /* color: #17282e; */
   color: #ebe6e3;
@@ -524,17 +531,17 @@ nav{
 
   TABLE 
 ----------------------------------------------------------*/
-/* .display-form table {
+/* .form-box table {
   margin: 0 auto;
 } */
 
-.display-form table tr td{ /*TABLE NORMAL CELL*/
+.form-box table tr td{ /*TABLE NORMAL CELL*/
   border-style: none;
   padding: .3rem .2rem 0 .2rem;
   /* margin-top: ; */
 }
 
-.display-form table tr th { /*TABLE TITLE CELL*/
+.form-box table tr th { /*TABLE TITLE CELL*/
   border: 1px solid #00527e;
   background: #00527e;
   color: white;
@@ -543,11 +550,11 @@ nav{
 }
 /*FORM ITEMS
 ---------------------------------------------------------*/
-.display-form input{
+.form-box input{
   text-align: left;
   width: 500px;
 }
-.display-form select{
+.form-box select{
   width: 100%;
   text-align: left;
 }
@@ -584,16 +591,23 @@ nav{
   .logo img{
     padding: 15px 0;
   }
-  nav{
+ 
+  
+  /* .nav-main{
     min-height: 12vh;
-  }
+  } */
 
   
+
+  .nav-links{
+    top: 12vh;
+  }
   .sub-nav{
     width: 15%;
     max-width: 220px;
   
   }
+  
   
 
 
@@ -626,7 +640,7 @@ nav{
     flex-direction: row;
   }
 
-  /* .display-form{
+  /* .form-box{
     padding-top: 14vh;
   } */
 }
@@ -637,6 +651,14 @@ nav{
     transform: translateX(0%);
     height: 12vh;
     top: 0;
+  }
+
+  .nav-main{
+    min-height: 12vh;
+  }
+
+  .content{
+    padding-top:12vh;
   }
 
   .burger{

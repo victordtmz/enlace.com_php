@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    define("WWW_ROOT", '/enlace/development');
     /*
     Assign file paths to PHP constants
     __FILE__ returns the current path to this file (initialize.php)
@@ -10,14 +11,20 @@
     define("PUBLIC_PATH", PROJECT_PATH . '/public');
     define("SHARED_PATH", PRIVATE_PATH . '/shared');
 
-    define("WWW_ROOT", '');
+    
 
     require_once('functions.php');
     require_once('database.php');
     require_once('db_queries.php');
     
+    // $menu_home = array(
+    //     "Inicio" => '/index.php',
+    //     "Staff" => 'public/staff/index.php',
+    //     "Ajax" => 'ajaxTest/index.php'
+    // );
+
     $menu_home = array(
-        "Inicio" => '/index.php',
+        "Inicio" => '/index-.php',
         "Staff" => 'public/staff/index.php',
         "Ajax" => 'ajaxTest/index.php'
     );
