@@ -1,9 +1,22 @@
-<!-- <?php  phpinfo();?>  -->
 <?php 
     require_once('../private/initialize.php'); 
     $page_title = 'Contacto'; 
     // $menu_items = $menu_home;
     include(SHARED_PATH . '/header.php');
+
+    if(is_post_request()){
+      $c_name = $_POST['contact-name'] ?? '';
+      $c_phone = $_POST['contact-phone'] ?? '';
+      $c_email = $_POST['contact-email'] ?? '';
+      $c_inquiry = $_POST['contact-inquiry'] ?? '';
+      $c_signature = $_POST['contact-pais'] ?? '';
+    }else{
+      $c_name = '';
+      $c_phone = '';
+      $c_email = '';
+      $c_inquiry = '';
+      $c_signature = '';
+    }
     
 ?>
 <!-- INICIO - GREEN BKGND WITH TITLE -->
@@ -23,34 +36,34 @@
       
       <div class="form-row">
         <label for="contact-name">Nombre*: </label>
-        <input type="text" name="contact-name" id="contact-name" required aria-required="true">
+        <input type="text" name="contact-name" id="contact-name" value="<?php echo $c_name;?>" required aria-required="true">
       </div> 
       
       <div class="form-row">
         <fieldset>
           <legend>País:</legend>
           
-        <label for="US"><input type="radio" name="contact-pais" value="US" id="US" checked>Estados Unidos</label>
-        
-        <label for="Mexico"><input type="radio" name="contact-pais" value="Mexico" id="Mexico">México</label>
+        <label for="US"><input type="radio" name="contact-pais" value="US" id="US" <?php echo ($c_signature == 'US' ? 'checked' : '' );?>>Estados Unidos</label>
+        <label for="Mexico"><input type="radio" name="contact-pais" value="Mexico" id="Mexico" <?php echo ($c_signature == 'Mexico' ? 'checked':''); ?>>México</label>
 
       </fieldset>
       </div> 
-      
-
+     
       <div class="form-row">
           <label for="contact-phone">Teléfono*: </label>
-          <input type="tel" name="contact-phone" id="contact-phone" required>
+          <input type="tel" name="contact-phone" id="contact-phone" required value="<?php echo $c_phone;?>">
         </div>
         
         <div class="form-row">
           <label for="contact-email">Email: </label>
-          <input type="email" id="contact-email" name="contact-email">
+          <input type="email" id="contact-email" name="contact-email" value="<?php echo $c_email;?>">
         </div>
         <div class="form-row">
           <label for="contact-inquiry">Consulta*: </label>
-          <textarea name="contact-inquiry" id="contact-inquiry" cols="30" rows="5" placeholder="En que te podemos ayudar" required aria-required="true"></textarea>
+          <textarea name="contact-inquiry" id="contact-inquiry" 
+            cols="30" rows="5" placeholder="En que te podemos ayudar" required aria-required="true"><?php echo $c_inquiry;?></textarea>
         </div>
+        
         <div class="g-recaptcha"  name="g-recaptcha-response"  
           data-sitekey="<?php echo CAPTCHA_SITE_KEY?>"></div>
         
