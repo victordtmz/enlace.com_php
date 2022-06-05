@@ -1,6 +1,6 @@
 <!-- <?php  phpinfo();?>  --> 
 <?php 
-    require_once('private/initialize.php'); 
+    require_once('../private/initialize.php'); 
     $page_title = 'Inicio'; 
     // $menu_items = $menu_home;
     include(SHARED_PATH . '/header.php');
@@ -34,7 +34,7 @@
             <img src="<?php echo url_for('private\images/liam-truong-htpU_wGEcW0-unsplash.jpg'); ?>" alt="">
             <div>
             <h5>Documentos Oficiales</h5>
-            <p>Te ayudamos a tramitar tus documentos oficiales de México o Estados Unidos, como actas de nacimiento, certificados, entre otros.  También te podemos ayduar a corregirlos</p>
+            <p>Te ayudamos a tramitar tus documentos oficiales de México o Estados Unidos, como actas de nacimiento, certificados, entre otros.  También te podemos ayudar a corregirlos</p>
             </div>
         </div>
 

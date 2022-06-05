@@ -30,7 +30,7 @@
       <ul class="nav-links dark">
         <?php 
             foreach ($menu_items as $key => $value){
-                echo "<li><a href='" . url_for($value) . "'>$key</a></li>";
+                echo "<li><a href='" . url_for(h($value)) . "'>$key</a></li>";
             }
         ?>  
         <!-- <li><a href="<?php echo url_for('/public/staff/index.php'); ?>">Inicio</a></li>

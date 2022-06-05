@@ -189,6 +189,8 @@ select{
 }
 label{  
   font-weight: 600;
+  color: #00527e;
+  width: auto;
   /* text-align: left; */
 }
 
@@ -209,6 +211,47 @@ input[type="submit"]:focus{
   background-color: rgb(224, 224, 224);
 }
 
+input[type="radio"]{
+  width: auto;
+  margin-right: .3rem;
+}
+
+fieldset{
+  margin: 1rem 0;
+  border: #00527e;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+}
+fieldset legend{
+  color: #00527e;
+  font-weight: 600;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+fieldset label{
+  padding: 0;
+  display: inline;
+  font-weight: 400;
+  width: auto;
+
+}
+
+fieldset input{
+  display: inline;
+}
+
+
+.form-status p{
+  color: green;
+}
+.form-status pre{
+  color: red;
+}
 
 /*DARK BACKGROWND
 ---------------------------------------------------------*/
@@ -338,50 +381,7 @@ header{
   justify-content: center;
 }
 
-/* REVIEW - WITH TRADUCCIONES INDEX.PHP */
-/* .form-set{
-  padding: .5rem 1rem;
-  align-items: start ;
-  display: block;
-  text-align: left;
-}
 
-.form-set input[type='submit']{
-  background-color: #ebe6e3;
-  color: #17282e;
-  padding: 0 .3rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.form-set input[type='submit']:hover{
-  background-color: #17282e;
-  color: #fff;
-}
-
-.form-set label, .form-set input{
-  text-align: left;
-} */
-/*FORM ONLY DISPLAY
------------------------------------------------------------------*/
-/* .top {
-  padding-top: 12vh;
-  
-} */
-
-
-
-
-@keyframes navLinkFade{
-  from{
-    opacity: 0;
-    transform: translateX(50px);
-
-  }
-  to{
-    opacity: 1;
-    transform:translateX(0px);
-  }
-}
 
 /*Inicio
 ---------------------------------------------------------*/
@@ -406,71 +406,7 @@ header{
   background: rgba(255, 255, 255, 0.8);
 }
 
-/*contact
----------------------------------------------------------*/
-/* .contact *{
-  font-family: inherit;
-  font-size: 100%;
-  color: #ebe6e3;
-  text-align: left;
-  
-  padding-top: 1rem;
-}
 
-.contact div form{
-  background-color: #17282e0c;
-  display: flex;
-  flex-direction: column;
-  padding: 1vw 2vw 2vw 2vw;
-  max-width: 700px;
-  margin: 0 auto;
-  justify-content: center;
-  border-radius: 20px;
-}
-.contact{
-  padding-bottom: 1vh;
-  color: #ebe6e3;
-}
-
-.contact label{
-  padding: 1rem 1rem 0 1rem;
-  font-size: 1.2rem;
-  display: block;
-  color: #00527e;
-}
-
-.contact input, .contact textarea{
-  font-size: 1.2rem;
-  padding: .8rem 5px .3rem 5px;
-  border-radius: 7px;
-  width: 100%;
-  background-color: #fffffff8;
-  color: #17282e;
-}
-.contact input[type="radio"]{
-  font-size: 5rem;
-  width: 1rem;
-  display: inline;
-  
-}
-.contact fieldset{
-  margin: 1rem 0;
-  border: #00527e;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 7px;
-}
-.contact fieldset legend{
-  font-size: 1.2rem;
-  padding: 0 1rem;
-  color: #00527e;
-}
-
-.contact fieldset label{
-  padding: 0 0 0 1rem;
-  display: inline;
-  color: #00527e;
-} */
 
 .overlay{
   width: 100%;
@@ -478,49 +414,12 @@ header{
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* .contact input[type="submit"]{
-  color: #fff;
-  background-color: #00527e;
-  border: #fff;
-  margin: 10px auto;
-  text-align: center;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.2rem;
-  border-width: 1px;
-  border-style: solid;
-  
-}
-.contact input[type="submit"]:hover{
-  background-color: #008cda;
-  border: #fff; 
-  color: #17282e;
-  background-color: #fff;
-  border: #00527e;
-  border-width: 1px;
-  border-style: solid;
-}
 
-.g-recaptcha{
-  padding: 0;
-  margin: -40px 0 40px 0;
-} */
-/*1024 - Desctop - Max Screen Size
----------------------------------------------------------------------------*/
 
 .tradShow{
   background-color: #cf9e7f;
 }
 
-/* .db-list{
-  width: 45%;
-  max-height: 1200px; 
-  overflow: scroll;
-  border: #17282e;
-  border-width: 1px;
-  border-style: solid;
-} */
 .db-details{
   height: 1200px;
   width: 45%;
@@ -528,43 +427,6 @@ header{
   border-width: 1px;
   border-style: solid;
 }
-
-
-/*DETAILS FORM
-
-  TABLE 
-----------------------------------------------------------*/
-/* .form-box table {
-  margin: 0 auto;
-} */
-/*TABLE NORMAL CELL*/
-/* .form-box table tr td{ 
-  border-style: none;
-  padding: .3rem .2rem 0 .2rem;
-} */
-/*TABLE TITLE CELL*/
-/* .form-box table tr th { 
-  border: 1px solid #00527e;
-  background: #00527e;
-  color: white;
-  text-align: left;
-  padding: 0 1rem;
-} */
-/*FORM ITEMS
----------------------------------------------------------*/
-/* .form-box input{
-  text-align: left;
-  width: 500px;
-}
-.form-box select{
-  width: 100%;
-  text-align: left;
-} */
-
-
-
-
-
 
 
 /*1024 - Desctop - Max Screen Size

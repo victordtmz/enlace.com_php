@@ -35,7 +35,7 @@
 
         <div class="location">
           <h6>México:</h6>
-          <p>Emiliano Zapata No. 15</p>
+          <p>Prolongación Mina 110, Centro</p>
           <p>Jerécuaro, Guanajuato 38540</p>
           <p>461-265-4168</p>
         </div>

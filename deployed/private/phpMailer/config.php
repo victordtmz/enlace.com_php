@@ -1,9 +1,9 @@
 <?php
     // require_once('../initialize.php'); 
     // Include requred php mailer files
-    include(PROJECT_PATH . '/private/phpMailer/src/Exception.php');
-    include(PROJECT_PATH . '/private/phpMailer/src/PHPMailer.php');
-    include(PROJECT_PATH . '/private/phpMailer/src/SMTP.php');
+    include(PRIVATE_FILES . '/phpMailer/src/Exception.php');
+    include(PRIVATE_FILES . '/phpMailer/src/PHPMailer.php');
+    include(PRIVATE_FILES . '/phpMailer/src/SMTP.php');
 
     // Define name spaces
     use PHPMailer\PHPMailer\PHPMailer;
@@ -17,32 +17,50 @@
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         //    $mail->SMTPDebug = 2;
-        $mail->Host = 'TITAN_HOST';
+        $mail->Host = TITAN_HOST;
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
         $mail->SMTPAuth = true;
-        $mail->Username = 'TITAN_USER';
-        $mail->Password = 'TITAN_PWD';
-        
+        $mail->Username = TITAN_USER;
+        $mail->Password = TITAN_PWD;
+        $mail->CharSet = 'UTF-8';
         $mail->isHTML(true);
     }
     
-    function mailerSend(
-        $from = array('admin@enlacellc.com', 'Enlace LLC'),
-        $to = array('abogadovictordomingo@hotmail.com', 'Victor Martinez'),
+    
+
+    
+    
+
+    function mailerSend($signature='US',
+        $from = array('victor.m@enlacellc.com', 'Enlace LLC'),
+        $to = array('Victor Martinez' => 'abogadovictordomingo@hotmail.com'),
         $subject = 'Enlace LLC',
         $body ='Enlace LLC')
         // too add attachments -> $mail->addAttachment('src/SMTP.php');
         {
             global  $mail;
+            global $signatureUS;
+            global $signatureMexico;
+            if(strtoupper($signature) == 'MEXICO'){
+                $signature = SIGNATURE_MEXICO;
+            }else{
+                $signature = SIGNATURE_US;
+            }
+            
+            $body .= $signature;
             $mail->setFrom($from[0], $from[1]);
-            $mail->addAddress($to[0], $to[1]);
+            // add all recepients
+            foreach($to as $name => $email){
+                $mail->addAddress($email, $name);
+            }
+            
             $mail->Subject = $subject;
             $mail->Body = $body;
             if (!$mail->send()) {
-                    echo 'Mailer Error: ' . $mail->ErrorInfo;
+                    echo '<pre> Mailer Error: ' . $mail->ErrorInfo . '</pre>';
                 } else {
-                    echo 'The email message was sent.';
+                    echo '<p> Mensaje enviado correctamente.</p>';
                 }
         }
 
