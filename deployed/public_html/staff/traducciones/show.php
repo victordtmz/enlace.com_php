@@ -6,10 +6,7 @@
     $page_title = 'Traducciones | Detalles'; 
     include(SHARED_PATH . '/header.php');
     $id = $_GET['id'] ?? '1';
-    $trad_records = select_trad_details($id);
-    $record = mysqli_fetch_assoc($trad_records);
-    mysqli_free_result($trad_records);
-    
+    $record = select_trad_view($id);
     
 ?> 
 <section class="top">

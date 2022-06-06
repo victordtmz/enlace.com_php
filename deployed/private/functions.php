@@ -42,15 +42,17 @@
     }
 
     function set_show_html($record){
-        foreach($record as $key => $value){ ?>
+        foreach($record as $key => $value){ 
+            if ($value) {?>
+            
             <div class="form-row">
               <h5>
                 <?php echo h($key);?>:
               </h5>
               <h6>
-                <?php echo h($value);?>
+                <?php echo $value;?>
               </h6>
             </div>
           <?php }  
-    }
+    }}
 ?>
