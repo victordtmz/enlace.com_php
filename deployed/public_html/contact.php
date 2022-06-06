@@ -15,7 +15,7 @@
       $c_phone = '';
       $c_email = '';
       $c_inquiry = '';
-      $c_signature = '';
+      $c_signature = 'US';
     }
     
 ?>

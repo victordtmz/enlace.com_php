@@ -40,4 +40,17 @@
     function is_get_request(){
         return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
+
+    function set_show_html($record){
+        foreach($record as $key => $value){ ?>
+            <div class="form-row">
+              <h5>
+                <?php echo h($key);?>:
+              </h5>
+              <h6>
+                <?php echo h($value);?>
+              </h6>
+            </div>
+          <?php }  
+    }
 ?>

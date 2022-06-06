@@ -1,50 +1,24 @@
 <?php
     ob_start();
     define("WWW_ROOT", '/enlace/deployed/public_html');
-    /*
-    Assign file paths to PHP constants
-    __FILE__ returns the current path to this file (initialize.php)
-    dirname() returns the path to the parent directory (private) folder
-    */
-
-
-    
-    
     define('PRIVATE_FILES', dirname(__FILE__));
-    // echo PRIVATE_FILES . '<br>';
     define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
-    // echo PROJECT_PATH. '<br>';
     define('SHARED_PATH', PROJECT_PATH . '/private/shared');
-    // echo SHARED_PATH;
-    // define('PRIVATE_PATH', dirname(__FILE__));
-    
-    
-    // define('PUBLIC_PATH', PROJECT_PATH . '/public_html');
-    // define('SHARED_PATH', PRIVATE_PATH . '/shared');
-
-    
 
     require_once('functions.php');
     require_once('database.php');
-    // require_once('db_queries.php');
     
     $menu_home = array(
-        "Inicio" => '/index.php',
-        "Contacto" => '/contact.php'
+        'Inicio' => '/index.php',
+        'Contacto' => '/contact.php',
+        'Staff' => '/staff'
+    );
+    $menu_staff = array(
+        'Inicio' => '/index.php',
+        'Staff' => '/staff',
+        'Traducciones' => '/staff/traducciones'
     );
     
-    $menu_staff = $menu_home;
-    $menu_staff["Traducciones"] = '/staff/traducciones/index.php';
-
-    
-    // $menu_staff = array_push($menu_home, "Traducciones" => 'public/staff/traducciones/index.php' );
-    
-//     $menu_staff = array(
-//         "Inicio" => '/index.php',
-//         "Staff" => 'public/staff/index.php',
-//         "Traducciones" => 'public/staff/traducciones/index.php'
-//     );
-
     $signatureStart = '
     <div style="line-height: 1rem; display: inline-block;">
     <h1 style="margin: 50px 0 2px 0;">Enlace LLC</h1>';

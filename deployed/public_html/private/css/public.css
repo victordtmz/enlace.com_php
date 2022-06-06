@@ -1,0 +1,23 @@
+h1, h2{
+    font-family: 'Caveat', cursive;
+  }
+
+.nav-main{
+    background-color: #17282e;
+}
+
+.nav-links{
+    background-color: #17282e;
+  } 
+
+footer{
+background-color: #17282e;
+} 
+
+.inicio{
+    background: #17282e;
+  }
+
+  header{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  }
