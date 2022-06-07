@@ -12,10 +12,10 @@
     $email = $record['email'];
     //give telefono and email htags
     if($email){
-        $record['Email'] = "<a href='mailto:$email'>$email</a>";
+        $record['email'] = "<a href='mailto:$email'>$email</a>";
     }
     if($tel){
-        $record['Telefono'] = "<a href='tel:$tel'>$tel</a>";
+        $record['telefono'] = "<a href='tel:$tel'>$tel</a>";
         $whats = str_replace('+', '', $tel);
         $record['WhatsApp'] = "<a href='https://wa.me/$whats'>$tel</a>";
     }else{
@@ -37,9 +37,9 @@
       'Idioma' => $record['idioma'],
       'Origen del documento' => $procedencia,
       'Contacto' => $record['contacto'],
-      'Telefono' => $record['Telefono'],
+      'Telefono' => $record['telefono'],
       'WhatsApp' => $record['WhatsApp'],
-      'Email' => $record['Email'],
+      'Email' => $record['email'],
       'Notas' => $record['notas']
       
     );

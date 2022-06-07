@@ -1,6 +1,6 @@
 <?php
     ob_start();
-    define("WWW_ROOT", '/enlace/deployed/public_html');
+    define("WWW_ROOT", '/enlace/public_html');
     define('PRIVATE_FILES', dirname(__FILE__));
     define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
     define('SHARED_PATH', PROJECT_PATH . '/private/shared');
