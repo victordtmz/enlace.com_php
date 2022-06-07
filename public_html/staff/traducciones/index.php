@@ -32,7 +32,7 @@
     
       <div class="form-set">
         <label for="trad-search">Busqueda:</label>
-        <input type="search" name="trad-search" value="<?php echo $form_search; ?>">
+        <input type="search" name="trad-search" value="<?php echo h($form_search); ?>">
       </div>
         
       <div class="form-set">

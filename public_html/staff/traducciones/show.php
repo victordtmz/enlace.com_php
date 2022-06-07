@@ -1,4 +1,8 @@
 <?php 
+    $id = $_GET['id'] ?? '';
+    if(!$id){
+      header("Location: index.php" );
+    }
     require_once('../../../private/initialize.php'); 
     require_once('queries.php');
     $menu_items = $menu_staff;
@@ -6,16 +10,16 @@
     $page_title = 'Traducciones | Detalles'; 
     include(SHARED_PATH . '/header_staff.php');
     //get the record.
-    $id = $_GET['id'] ?? '1';
+   
     $record = select_Id($id);
-    $tel = $record['telNo'];
+    $tel = $record['Telefono'];
     $email = $record['email'];
     //give telefono and email htags
     if($email){
         $record['email'] = "<a href='mailto:$email'>$email</a>";
     }
     if($tel){
-        $record['telefono'] = "<a href='tel:$tel'>$tel</a>";
+        $record['Telefono'] = "<a href='tel:$tel'>$tel</a>";
         $whats = str_replace('+', '', $tel);
         $record['WhatsApp'] = "<a href='https://wa.me/$whats'>$tel</a>";
     }else{
@@ -37,7 +41,7 @@
       'Idioma' => $record['idioma'],
       'Origen del documento' => $procedencia,
       'Contacto' => $record['contacto'],
-      'Telefono' => $record['telefono'],
+      'Telefono' => $record['Telefono'],
       'WhatsApp' => $record['WhatsApp'],
       'Email' => $record['email'],
       'Notas' => $record['notas']
