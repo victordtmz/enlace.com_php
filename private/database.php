@@ -1,14 +1,18 @@
 <?php 
     require_once('db_credentials.php');
 
-    function tdb_connect(){
-        $t_connection = mysqli_connect(DB_SERVER, DB_TRAD_USER, DB_PASS, DB_TRAD);
-        confirm_db_connect();
-        return $t_connection;
-    }
-    function tdb_disconnect($t_connection){
-        if(isset($t_connection)){
-            mysqli_close($t_connection);
+    // $db_traducciones = new mysqli(DB_SERVER, DB_TRAD_USER, DB_PASS, DB_TRAD);
+    // $db_admin = new mysqli(DB_SERVER, DB_ADMIN_USER, DB_ADMIN_PASS, DB_ADMIN);
+
+    // function db_connect($db, $user, $password){
+    //     $t_connection = mysqli_connect(DB_SERVER, $user, $password, $db);
+    //     confirm_db_connect();
+    //     return $t_connection;
+    // }
+    
+    function db_disconnect($connection){
+        if(isset($connection)){
+            mysqli_close($connection);
         }
     }
 
@@ -31,5 +35,17 @@
         }
     }
 
+    //TRADUCCIONES
+    //---------------------------------------------------------------------------
+    function traducciones_db_connect(){
+        $connection = db_connect(DB_TRAD, DB_TRAD_USER, DB_PASS);
+        return $connection;
+    }
+    //ADMINS
+    //---------------------------------------------------------------------------
+    function admins_db_connect(){
+        $connection = db_connect(DB_ADMIN, DB_ADMIN_USER, DB_ADMIN_PASS);
+        return $connection;
+    }
     
 ?>

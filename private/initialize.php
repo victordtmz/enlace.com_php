@@ -16,7 +16,8 @@
     $menu_staff = array(
         'Inicio' => '/index.php',
         'Staff' => '/staff',
-        'Traducciones' => '/staff/traducciones'
+        'Traducciones' => '/staff/traducciones',
+        'Admin' => '/staff/admins'
     );
     
     $signatureStart = '

@@ -1,9 +1,9 @@
 <?php 
     require_once('../../../private/initialize.php'); 
-    $db = tdb_connect();
+    $db = traducciones_db_connect();
     
     function select_records($sql){
-        // $db = tdb_connect();
+        // $db = traducciones_db_connect();
         global $db;
         $records = mysqli_query($db, $sql);
         confirm_result_set($records);
