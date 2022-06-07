@@ -5,6 +5,7 @@
     $page_title = 'Staff | Traducciones'; 
     $menu_items = $menu_staff;
     include(SHARED_PATH . '/header_staff.php');
+	
 	if(is_post_request()){
 		$form_year = $_POST['trad-fyear'] ?? '';
 		$form_search = $_POST['trad-search'] ?? '';
@@ -14,12 +15,9 @@
 		$form_search = '';
 	  }
 ?>
-<section class="inicio">
-    <div class="content_wrap">
-        <h1>Traducciones</h1>
-    </div>
-</section>
   <section class="inicio sub-nav">
+	<?php include('header_sub.php'); ?>
+	<h4>Filtros:</h4>
     <form method="post" class="filters dark narrow">
       <div class="form-set">
         <label for="trad-fyear">Año:</label>
@@ -64,7 +62,7 @@
 			<th>&nbsp;</th> -->
 		</tr> 
 		<?php
-			$trad_records = select_trad_list();
+			$trad_records = select_all();
 			while($record = mysqli_fetch_assoc($trad_records)) { ?>
 			<tr>
 				<td><a class="list-action" href="<?php echo url_for('staff/traducciones/show.php?id=' . $record['id']); ?>"><?php echo h($record['Folio']); ?></a></td>

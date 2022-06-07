@@ -12,6 +12,7 @@
         }
     }
 
+    
     function confirm_db_connect(){
         if(mysqli_connect_errno()){
             $msg = "Error de conexion con la base de datos: ";
@@ -26,4 +27,6 @@
             exit("No se obtuvieron datos de la base.");
         }
     }
+
+    
 ?>

@@ -43,7 +43,8 @@
 
     function set_show_html($record){
         foreach($record as $key => $value){ 
-            if ($value) {?>
+            if ($value) {
+                ?>
             
             <div class="form-row">
               <h5>
@@ -54,5 +55,6 @@
               </h6>
             </div>
           <?php }  
-    }}
+    }
+}
 ?>

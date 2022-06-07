@@ -180,7 +180,10 @@ input:focus, textarea:focus, select:focus{
 }
 
 .dark input:focus, .dark textarea:focus,.dark select:focus{
-  box-shadow: 0 0 5px rgb(209, 255, 209);
+  box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+.dark input, .dark textarea,.dark select{
+  background-color: rgb(235, 235, 235);
 }
 
 
@@ -197,39 +200,59 @@ label{
 }
 
 .dark label {
-  color: #fff;
+  color: rgb(235, 235, 235);
 }
 
-input[type="submit"]{
+input[type="submit"], .filters a {
   cursor: pointer;
   text-align: center;
-  color: #fff;
+  color: rgb(235, 235, 235);
   background-color: #00527e;
   border: 3px solid #00527e;
+  text-decoration: underline;
 }
 
-.dark input[type="submit"]{
+.dark input[type="submit"], .filters a{
   color: #00527e;
-  background-color: #fff;
-  border: 3px solid #fff;
+  background-color: rgb(235, 235, 235);
+  border: 3px solid rgb(235, 235, 235);
 }
 
+/* .filters-sub, .header-sub ul, .header-sub ul li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+} */
 
-input[type="submit"]:hover{
-  background-color: #fff;
+.filters a {
+  width: 100%;
+  margin: .3rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  display: block;
+  padding: .1rem;
+  background-color: rgb(235, 235, 235);
+}
+/* .header-sub ul li button{
+  width: 100%;
+} */
+
+
+input[type="submit"]:hover, .filters a{
+  background-color: rgb(235, 235, 235);;
   color: #00527e;
   /* border-color: #00527e; */
 }
 
-.dark input[type="submit"]:hover{
+.dark input[type="submit"]:hover, .filters a:hover{
   background-color: #00527e;
-  color: #fff;
+  color: rgb(235, 235, 235);;
   /* border-color: #00527e; */
 }
 
 input[type="submit"]:focus{
   box-shadow: none;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(235, 235, 235);
 }
 
 input[type="radio"]{
@@ -472,6 +495,13 @@ table.list tr th {
   border-width: 1px;
   border-style: solid;
 } */
+
+/*HEADER SUB 
+--------------------------------------------------------------------------*/
+li{
+  list-style: none;
+  padding: 1rem;
+}
 
 
 /*1024 - Desctop - Max Screen Size

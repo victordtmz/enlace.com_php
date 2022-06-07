@@ -48,7 +48,7 @@
       <th>&nbsp;</th> -->
     </tr> 
     <?php
-      $trad_records = select_trad_list();
+      $trad_records = select_all();
       while($record = mysqli_fetch_assoc($trad_records)) { ?>
       <tr>
         <td><a class="list-action" href="<?php echo url_for('public/staff/traducciones/show.php?id=' . $record['id']); ?>"><?php echo h($record['Folio']); ?></a></td>

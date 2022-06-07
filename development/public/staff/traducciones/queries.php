@@ -23,7 +23,7 @@
         telNo AS 'Telefono',
         notas AS 'Notas'";
 
-    function select_records($sql){
+    function select_records_traducciones($sql){
         $db = tdb_connect();
         $records = mysqli_query($db, $sql);
         confirm_result_set($records);
@@ -34,10 +34,10 @@
         global $table;
         global $selectAll;
         $selectAll .= " $table WHERE id = $id;";
-        $records = select_records($selectAll);
+        $records = select_records_traducciones($selectAll);
         return $records;
     }
-    function select_trad_list(){
+    function select_all(){
         $filter_year = $_POST['trad-fyear'] ?? date('Y'); 
         $search = $_POST['trad-search'] ?? ""; 
         $search = "%" . $search . "%"; 
@@ -57,7 +57,7 @@
         $selectList .= " AND YEAR(IFNULL(fecha, '')) LIKE $filter_year";
         $selectList .= " ORDER BY fecha DESC, folio DESC;"; 
         // echo $selectList;
-        $records = select_records($selectList);
+        $records = select_records_traducciones($selectList);
         return $records;
     }
     
