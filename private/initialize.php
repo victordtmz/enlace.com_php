@@ -5,8 +5,9 @@
     define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
     define('SHARED_PATH', PROJECT_PATH . '/private/shared');
 
-    require_once('functions.php');
-    require_once('database.php');
+    require_once(PRIVATE_FILES . '/functions.php');
+    require_once(PRIVATE_FILES . '/database.php');
+    require_once(PRIVATE_FILES . '/validation_functions.php');
     
     $menu_home = array(
         'Inicio' => '/index.php',

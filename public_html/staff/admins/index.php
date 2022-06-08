@@ -1,17 +1,16 @@
-<!-- <?php  phpinfo();?>  --> 
 <?php 
     require_once('../../../private/initialize.php'); 
     require_once('queries.php');
-    $page_title = 'Staff | Traducciones'; 
-    $menu_items = $menu_staff;
-    include(SHARED_PATH . '/header_staff.php');
+    // $page_title = 'Staff | Traducciones'; 
+    // $menu_items = $menu_staff;
+    // include(SHARED_PATH . '/header_staff.php');
 	
-	if(is_post_request()){
-		$form_search = $_POST['trad-search'] ?? '';
+	// if(is_post_request()){
+	// 	$form_search = $_POST['trad-search'] ?? '';
 		
-	  }else{
-		$form_search = '';
-	  }
+	//   }else{
+	// 	$form_search = '';
+	//   }
 ?>
   <section class="inicio sub-nav">
 	<?php include('header_sub.php'); ?>
@@ -46,6 +45,7 @@
 			<th>Nombre</th>
 			<th>Apellidos</th>
 			<th>Email</th>
+			<th>Edit</th>
 			<!-- <th>&nbsp;</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th> -->
@@ -58,6 +58,7 @@
 				<td><a class="list-action" href="<?php echo url_for('staff/admins/show.php?id=' . $record['id']); ?>"><?php echo h($record['Nombre']); ?></a></td>
 				<td><?php echo h($record['Apellidos']); ?></td>
 				<td><?php echo h($record['Email']); ?></td>
+				<td><a class="list-action" href="<?php echo url_for('staff/admins/edit.php?id=' . $record['id']); ?>">Editar</a></td>
 			</tr>
 		<?php }
 			

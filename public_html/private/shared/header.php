@@ -1,4 +1,4 @@
-<?php 
+<?php  
     $page_title = (isset($page_title) ? ("Enlace LLC | $page_title") : 'Enlace LLC' );
     if(!isset($menu_items)){
         $menu_items = $menu_home;

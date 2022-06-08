@@ -1,47 +1,41 @@
 <?php 
     require_once('../../../private/initialize.php'); 
-    require_once('functions.php');
-     
     $menu_items = $menu_staff;
-    
     //page title will show on browser tab
     $page_title = 'Administradores'; 
-    
     include(SHARED_PATH . '/header_staff.php');
+    
     //get the record.
-    // $nombre = '';
-    // $apellidos = '';
-    // $email =  '';
-    // $pass =  '';
-    // $pass_verify = '';
     if(is_post_request()){
-      if($_POST['admin-submit']){
-        $nombre = $_POST['admin-nombre'] ?? '';
-        $apellidos = $_POST['admin-apellidos'] ?? '';
-        $email = $_POST['admin-email'] ?? '';
-        $pass = $_POST['admin-password'] ?? '';
-        // $pass_verify = $_POST['admin-password-ver'] ?? '';
-  
-        $sql = "INSERT INTO admins (nombre, apellidos, email, hashed_password) VALUES (";
-        $sql .= "'" . $nombre . "',";
-        $sql .= "'" . $apellidos . "',";
-        $sql .= "'" . $email . "',";
-        $sql .= "'" . $pass . "')";
-        echo $sql;
-  
-        $result = $db -> query($sql);
-        if ($result){
-          $new_id = $db -> insert_id;
-          redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
-  
-        }else{
-          echo printf('Error al intentar guardar el registro: %s\n', $db->error);
-          exit;
-        }
-        
+      $nombre = $_POST['admin-nombre'] ?? '';
+      $apellidos = $_POST['admin-apellidos'] ?? '';
+      $email = $_POST['admin-email'] ?? '';
+      $pass = $_POST['admin-password'] ?? '';
+      // $pass_verify = $_POST['admin-password-ver'] ?? '';
+
+      $sql = "INSERT INTO admins (nombre, apellidos, email, hashed_password) VALUES (";
+      $sql .= "'" . $nombre . "',";
+      $sql .= "'" . $apellidos . "',";
+      $sql .= "'" . $email . "',";
+      $sql .= "'" . $pass . "')";
+      echo $sql;
+
+      $result = $db -> query($sql);
+      if ($result){
+        $new_id = $db -> insert_id;
+        redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
+
+      }else{
+        echo printf('Error al intentar guardar el registro: %s\n', $db->error);
+        exit;
       }
+      
     }else{
-        clear_form_new();
+      $nombre = '';
+      $apellidos = '';
+      $email =  '';
+      $pass =  '';
+      $pass_verify = '';
     }
     
 ?> 

@@ -16,6 +16,7 @@
 
     function h($string=""){
         return htmlspecialchars($string);
+
     }
  
     function error_404(){
