@@ -296,6 +296,9 @@ fieldset input{
 .form-status pre{
   color: red;
 }
+.error{
+  color: red;
+}
 
 /*DARK BACKGROWND
 ---------------------------------------------------------*/

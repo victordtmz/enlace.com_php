@@ -4,7 +4,7 @@
     //page title will show on browser tab
     $page_title = 'Administradores'; 
     include(SHARED_PATH . '/header_staff.php');
-    include("queries.php");
+    include_once("queries.php");
     
     //get the record.
     $id = $_GET['id'] ?? '';
@@ -13,27 +13,19 @@
     }
 
     if(is_post_request()){
-      $nombre = $_POST['admin-nombre'] ?? '';
-      $apellidos = $_POST['admin-apellidos'] ?? '';
-      $email = $_POST['admin-email'] ?? '';
-      $pass = $_POST['admin-password'] ?? '';
-      // $pass_verify = $_POST['admin-password-ver'] ?? '';
-
-      $sql = "UPDATE admins SET ";
-      $sql .= "nombre = '" . $nombre . "', ";
-      $sql .= "apellidos = '" . $apellidos . "', ";
-      $sql .= "email = '" . $email . "', ";
-      $sql .= "hashed_password ='" . $pass . "' WHERE id = $id;";
-      // echo $sql;
-
-      $result = $db -> query($sql);
-      if ($result){
-        $new_id = $db -> insert_id;
-        redirect_to(url_for('/staff/admins/show.php?id=' . $new_id));
-
+      $record = [];
+      $record['id'] = $id;
+      $record['nombre'] = $_POST['admin-nombre'] ?? '';
+      $record['apellidos'] = $_POST['admin-apellidos'] ?? '';
+      $record['email'] = $_POST['admin-email'] ?? '';
+      $record['password'] = $_POST['admin-password'] ?? '';
+      $record['password-ver'] = $_POST['admin-password-ver'] ?? '';
+      // call the function to update the record
+      $result = edit_record($record);
+      if ($result === true){
+        redirect_to(url_for('/staff/admins/show.php?id=' . $id));
       }else{
-        echo printf('Error al intentar guardar el registro: %s\n', $db->error);
-        exit;
+        $errors = $result;
       }
       
     }else{
@@ -42,7 +34,12 @@
     
 ?> 
 <section class="inicio sub-nav">
-  <?php  include('header_sub.php');?>
+  <div class="content_wrap dark filters">
+      <h2>Administradores</h2> 
+      <a href="index.php">Listado</a>
+      <a href="show.php?id= <?php echo h(u($id)) ?>">Detalles</a>
+      <a href="new.php">Nuevo</a>
+  </div>
 </section>
 <section class="top">
   <div class="form-box">
@@ -52,38 +49,54 @@
       
     <div class="form-row">
         <label for="admin-nombre">Nombre:</label>
+        <?php if(isset($errors['nombre'])){
+        foreach($errors['nombre'] as $error){
+           echo '<p class="error">' . h($error) . '</p>';
+        }} ?>
         <input type="text" name="admin-nombre" id="admin-nombre" value="<?php echo h($record['nombre']); ?>" required>
       </div>
       
+      
       <div class="form-row">
         <label for="admin-apellidos">Apellidos:</label>
+        <?php if(isset($errors['apellidos'])){
+        foreach($errors['apellidos'] as $error){
+           echo '<p class="error">' . h($error) . '</p>';
+        }} ?>
         <input type="text" name="admin-apellidos" id="admin-apellidos" value="<?php echo h($record['apellidos']); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-email">Email:</label>
+        <?php if(isset($errors['email'])){
+        foreach($errors['email'] as $error){
+           echo '<p class="error">' . h($error) . '</p>';
+        }} ?>
         <input type="text" name="admin-email" id="admin-email"value="<?php echo h($record['email']); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password">Contraseña:</label>
+        <?php if(isset($errors['password'])){
+        foreach($errors['password'] as $error){
+           echo '<p class="error">' . h($error) . '</p>';
+        }} ?>
         <input type="password" name="admin-password" id="admin-password" value="" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password-ver">Verificar contraseña:</label>
+        <?php if(isset($errors['password-ver'])){
+        foreach($errors['password-ver'] as $error){
+           echo '<p class="error">' . h($error) . '</p>';
+        }} ?>
         <input type="password" name="admin-password-ver" id="admin-password-ver" value="">
       </div>
       <p>La contraseña debe ser de por lo menos 12 carácteres e incluir por lo menos una letra mayúscula, mínuscula, número y símbolo.</p>
       <div class="form-row">
         <input type="submit" name="admin-submit" id="admin-submit" value="Guardar cambios">
-        <input type="submit" name="admin-cancel" id="admin-cancel" value="Cancelar">
       </div>
-
-
-
     </form>
-   
   </div>
 </section>
 

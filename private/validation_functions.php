@@ -105,9 +105,10 @@
     $sql .= "WHERE menu_name='" . db_escape($db, $menu_name) . "' ";
     $sql .= "AND id != '" . db_escape($db, $current_id) . "'";
 
-    $page_set = mysqli_query($db, $sql);
-    $page_count = mysqli_num_rows($page_set);
-    mysqli_free_result($page_set);
+    // $db -> query($sql);
+    $page_set = $db -> query($sql);
+    $page_count = $page_set -> $num_rows;
+    $page_set -> free_result();
 
     return $page_count === 0;
   }
@@ -121,11 +122,11 @@
     global $db;
 
     $sql = "SELECT * FROM admins ";
-    $sql .= "WHERE username='" . db_escape($db, $username) . "' ";
+    $sql .= "WHERE email='" . db_escape($db, $username) . "' ";
     $sql .= "AND id != '" . db_escape($db, $current_id) . "'";
 
-    $result = mysqli_query($db, $sql);
-    $admin_count = mysqli_num_rows($result);
+    $result = $db -> query($sql);
+    $admin_count = $result -> num_rows;
     mysqli_free_result($result);
 
     return $admin_count === 0;
