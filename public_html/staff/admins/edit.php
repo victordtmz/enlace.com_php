@@ -10,8 +10,6 @@
     $id = $_GET['id'] ?? '';
     if(!$id){
       header("Location: index.php" );
-    }else{
-      $record = select_Id_edit($id);
     }
 
     if(is_post_request()){
@@ -21,12 +19,12 @@
       $pass = $_POST['admin-password'] ?? '';
       // $pass_verify = $_POST['admin-password-ver'] ?? '';
 
-      $sql = "INSERT INTO admins (nombre, apellidos, email, hashed_password) VALUES (";
-      $sql .= "'" . $nombre . "',";
-      $sql .= "'" . $apellidos . "',";
-      $sql .= "'" . $email . "',";
-      $sql .= "'" . $pass . "')";
-      echo $sql;
+      $sql = "UPDATE admins SET ";
+      $sql .= "nombre = '" . $nombre . "', ";
+      $sql .= "apellidos = '" . $apellidos . "', ";
+      $sql .= "email = '" . $email . "', ";
+      $sql .= "hashed_password ='" . $pass . "' WHERE id = $id;";
+      // echo $sql;
 
       $result = $db -> query($sql);
       if ($result){
@@ -39,11 +37,7 @@
       }
       
     }else{
-      $nombre = '';
-      $apellidos = '';
-      $email =  '';
-      $pass =  '';
-      $pass_verify = '';
+      $record = select_Id_edit($id);
     }
     
 ?> 
@@ -54,7 +48,7 @@
   <div class="form-box">
     <h3>Crear nueva cuenta de administrador</h3>
     
-    <form method="post">
+    <form method="post" action="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($id))); ?>">
       
     <div class="form-row">
         <label for="admin-nombre">Nombre:</label>
