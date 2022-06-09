@@ -16,12 +16,11 @@
 ?> 
 <section class="inicio sub-nav">
 
-<div class="content_wrap dark filters">
-    <h2>Administradores</h2> 
-    <a href="index.php">Listado</a>
-    <a href="edit.php?id= <?php echo h(u($id)) ?>">Editar</a>
-    <a href="new.php">Nuevo</a>
-
+  <div class="content_wrap dark filters">
+      <h2>Administradores</h2> 
+      <a href="index.php">Listado</a>
+      <a href="edit.php?id= <?php echo h(u($id)) ?>">Editar</a>
+      <a href="new.php">Nuevo</a>
   </div>
 
 </section>
