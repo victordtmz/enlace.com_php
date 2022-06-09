@@ -1,23 +1,26 @@
 <?php 
     require_once('../../../private/initialize.php'); 
-    require_once('queries.php');
-    // $page_title = 'Staff | Traducciones'; 
-    // $menu_items = $menu_staff;
-    // include(SHARED_PATH . '/header_staff.php');
+    $page_title = 'Staff | Traducciones'; 
+    $menu_items = $menu_staff;
+    include(SHARED_PATH . '/header_staff.php');
+
 	
-	// if(is_post_request()){
-	// 	$form_search = $_POST['trad-search'] ?? '';
+	
+	if(is_post_request()){
+		$form_search = $_POST['trad-search'] ?? '';
 		
-	//   }else{
-	// 	$form_search = '';
-	//   }
+	  }else{
+		$form_search = '';
+	  }
 ?>
   <section class="inicio sub-nav">
-	<?php include('header_sub.php'); ?>
+	<!--  -->
+	<!-- <section class="inicio sub-nav"> -->
+	  <?php include('header_sub.php') ?>
+	<!-- </section> -->
 	<h4>Filtros:</h4>
     <form method="post" class="filters dark narrow">
       
-    
       <div class="form-set">
         <label for="trad-search">Busqueda:</label>
         <input type="search" name="trad-search" value="<?php echo h($form_search); ?>">

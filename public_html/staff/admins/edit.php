@@ -4,8 +4,16 @@
     //page title will show on browser tab
     $page_title = 'Administradores'; 
     include(SHARED_PATH . '/header_staff.php');
+    include("queries.php");
     
     //get the record.
+    $id = $_GET['id'] ?? '';
+    if(!$id){
+      header("Location: index.php" );
+    }else{
+      $record = select_Id_edit($id);
+    }
+
     if(is_post_request()){
       $nombre = $_POST['admin-nombre'] ?? '';
       $apellidos = $_POST['admin-apellidos'] ?? '';
@@ -50,31 +58,31 @@
       
     <div class="form-row">
         <label for="admin-nombre">Nombre:</label>
-        <input type="text" name="admin-nombre" id="admin-nombre" value="<?php echo $nombre; ?>" required>
+        <input type="text" name="admin-nombre" id="admin-nombre" value="<?php echo h($record['nombre']); ?>" required>
       </div>
       
       <div class="form-row">
         <label for="admin-apellidos">Apellidos:</label>
-        <input type="text" name="admin-apellidos" id="admin-apellidos" value="<?php echo $apellidos; ?>" required>
+        <input type="text" name="admin-apellidos" id="admin-apellidos" value="<?php echo h($record['apellidos']); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-email">Email:</label>
-        <input type="text" name="admin-email" id="admin-email"value="<?php echo $email; ?>" required>
+        <input type="text" name="admin-email" id="admin-email"value="<?php echo h($record['email']); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password">Contraseña:</label>
-        <input type="password" name="admin-password" id="admin-password" value="<?php echo $pass; ?>" required>
+        <input type="password" name="admin-password" id="admin-password" value="" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password-ver">Verificar contraseña:</label>
-        <input type="password" name="admin-password-ver" id="admin-password-ver" value="<?php echo $pass_verify; ?>">
+        <input type="password" name="admin-password-ver" id="admin-password-ver" value="">
       </div>
       <p>La contraseña debe ser de por lo menos 12 carácteres e incluir por lo menos una letra mayúscula, mínuscula, número y símbolo.</p>
       <div class="form-row">
-        <input type="submit" name="admin-submit" id="admin-submit" value="Crear usuario">
+        <input type="submit" name="admin-submit" id="admin-submit" value="Guardar cambios">
         <input type="submit" name="admin-cancel" id="admin-cancel" value="Cancelar">
       </div>
 

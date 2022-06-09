@@ -1,13 +1,13 @@
 <?php 
     require_once('../../../private/initialize.php'); 
-    require_once('functions.php');
-     
     $menu_items = $menu_staff;
-    
-    //page title will show on browser tab
     $page_title = 'Administradores'; 
-    
     include(SHARED_PATH . '/header_staff.php');
+?>
+<section class="inicio sub-nav">
+  <?php include('header_sub.php') ?>
+</section>
+<?php
     //get the record.
     // $nombre = '';
     // $apellidos = '';
@@ -45,9 +45,7 @@
     }
     
 ?> 
-<section class="inicio sub-nav">
-  <?php  include('header_sub.php');?>
-</section>
+
 <section class="top">
   <div class="form-box">
     <h3>Crear nueva cuenta de administrador</h3>
@@ -56,27 +54,27 @@
       
     <div class="form-row">
         <label for="admin-nombre">Nombre:</label>
-        <input type="text" name="admin-nombre" id="admin-nombre" value="<?php echo $nombre; ?>" required>
+        <input type="text" name="admin-nombre" id="admin-nombre" value="<?php echo h($nombre); ?>" required>
       </div>
       
       <div class="form-row">
         <label for="admin-apellidos">Apellidos:</label>
-        <input type="text" name="admin-apellidos" id="admin-apellidos" value="<?php echo $apellidos; ?>" required>
+        <input type="text" name="admin-apellidos" id="admin-apellidos" value="<?php echo h($apellidos); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-email">Email:</label>
-        <input type="text" name="admin-email" id="admin-email"value="<?php echo $email; ?>" required>
+        <input type="text" name="admin-email" id="admin-email"value="<?php echo h($email); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password">Contraseña:</label>
-        <input type="password" name="admin-password" id="admin-password" value="<?php echo $pass; ?>" required>
+        <input type="password" name="admin-password" id="admin-password" value="<?php echo h($pass); ?>" required>
       </div>
 
       <div class="form-row">
         <label for="admin-password-ver">Verificar contraseña:</label>
-        <input type="password" name="admin-password-ver" id="admin-password-ver" value="<?php echo $pass_verify; ?>">
+        <input type="password" name="admin-password-ver" id="admin-password-ver" value="<?php echo h($pass_verify); ?>">
       </div>
       <p>La contraseña debe ser de por lo menos 12 carácteres e incluir por lo menos una letra mayúscula, mínuscula, número y símbolo.</p>
       <div class="form-row">

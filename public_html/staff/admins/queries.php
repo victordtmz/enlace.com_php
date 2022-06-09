@@ -38,6 +38,19 @@
         return $record;
     }
 
+    function select_Id_edit($id){
+        // returns an associate array with the record
+        global $db;
+        $sql = "SELECT id,
+            nombre,
+            apellidos, 
+            email from admins WHERE id ='" . db_escape($db, $id) . "'";
+        $records = $db->query($sql);
+        $record = $records->fetch_assoc();
+        $records->free_result();
+        return $record;
+    }
+
     
     function select_all(){
         // get filter values

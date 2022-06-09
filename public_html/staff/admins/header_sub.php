@@ -1,6 +1,6 @@
 <?php
-    // require_once('queries.php');
-    // require_once('functions.php');
+    require_once('queries.php');
+    require_once('functions.php');
 ?>
 
 <div class="content_wrap dark filters">
