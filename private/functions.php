@@ -42,6 +42,21 @@
         return $_SERVER['REQUEST_METHOD'] == 'GET';
     }
 
+    function display_errors($errors=array()) {
+        $output = '';
+        if(!empty($errors)) {
+          $output .= "<div class=\"errors\">";
+          $output .= "Corrija los siguientes errores:";
+          $output .= "<ul>";
+          foreach($errors as $error) {
+            $output .= "<li class='error'>" . h($error) . "</li>";
+          }
+          $output .= "</ul>";
+          $output .= "</div>";
+        }
+        return $output;
+      }
+
     function set_show_html($record){
         foreach($record as $key => $value){ 
             if ($value) {

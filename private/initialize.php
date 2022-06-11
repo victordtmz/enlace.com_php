@@ -1,5 +1,6 @@
 <?php
     ob_start();
+    session_start();
     define("WWW_ROOT", '/enlace/public_html');
     define('PRIVATE_FILES', dirname(__FILE__));
     define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
@@ -8,17 +9,19 @@
     require_once(PRIVATE_FILES . '/functions.php');
     require_once(PRIVATE_FILES . '/database.php');
     require_once(PRIVATE_FILES . '/validation_functions.php');
+    require_once(PRIVATE_FILES . '/auth_functions.php');
     
     $menu_home = array(
         'Inicio' => '/index.php',
         'Contacto' => '/contact.php',
-        'Staff' => '/staff'
+        'login' => '/staff/login.php'
     );
     $menu_staff = array(
         'Inicio' => '/index.php',
         'Staff' => '/staff',
         'Traducciones' => '/staff/traducciones',
-        'Admin' => '/staff/admins'
+        'Admin' => '/staff/admins/',
+        'login' => '/staff/login.php'
     );
     
     $signatureStart = '

@@ -1,6 +1,12 @@
-<!-- <?php  phpinfo();?>  --> 
 <?php 
+    // ini_set('session.save_path',realpath(dirname($_SERVER['DOCUMENT_ROOT']) . '/../session'));
+    // ini_set('session.save_path', realpath('C:\Users\aboga\Documents\cookies'));
+    // echo $_SERVER['DOCUMENT_ROOT'];
+    // $dir = dirname($_SERVER['DOCUMENT_ROOT'] . '/../session');
+    // echo $dir;
     require_once('../private/initialize.php'); 
+    
+    
     $page_title = 'Inicio'; 
     // $menu_items = $menu_home;
     include(SHARED_PATH . '/header.php');

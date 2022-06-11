@@ -1,5 +1,6 @@
 <?php 
     require_once('../../../private/initialize.php'); 
+    require_login();
     require_once('queries.php');
     $menu_items = $menu_staff;
     $page_title = 'Administradores'; 
@@ -21,8 +22,8 @@
           $errors = $result;
         }elseif ($result){
           $id = $result;
-          echo 'New record created with id:' . $id;
-          // redirect_to(url_for('/staff/admins/show.php?id=' . $id));
+          // echo 'New record created with id:' . $id;
+          redirect_to(url_for('/staff/admins/show.php?id=' . $id));
         }
 
       }
@@ -35,6 +36,8 @@
 
 <div class="content_wrap dark filters">
     <h2>Administradores</h2> 
+	  <p>Usuario:</p>
+    <p><?php echo $_SESSION['user'];?></p>
     <a href="index.php">Listado</a>
   </div>
 

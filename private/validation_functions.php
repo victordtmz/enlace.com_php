@@ -123,7 +123,7 @@
 
     $sql = "SELECT * FROM admins ";
     $sql .= "WHERE email='" . db_escape($db, $username) . "' ";
-    $sql .= "AND id != '" . db_escape($db, $current_id) . "'";
+    $sql .= "AND id <> '" . db_escape($db, $current_id) . "'";
 
     $result = $db -> query($sql);
     $admin_count = $result -> num_rows;

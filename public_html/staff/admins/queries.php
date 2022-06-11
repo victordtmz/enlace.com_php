@@ -5,10 +5,6 @@
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
 }
-    function db_connect(){
-
-    }
-
 
     function select_Id($id){
         // returns an associate array with the record
@@ -29,6 +25,21 @@
             nombre,
             apellidos, 
             email from admins WHERE id ='" . db_escape($db, $id) . "'";
+        $records = $db->query($sql);
+        $record = $records->fetch_assoc();
+        $records->free_result();
+        return $record;
+    }
+
+    function select_user_name($user){
+        // returns an associate array with the record
+        global $db;
+        $sql = "SELECT id, 
+            CONCAT(nombre, ' ', apellidos) AS 'user',
+            email as 'username',
+            hashed_password
+            FROM admins WHERE email ='" . db_escape($db, $user) . "'";
+        // echo $sql;
         $records = $db->query($sql);
         $record = $records->fetch_assoc();
         $records->free_result();
@@ -58,6 +69,21 @@
         return $records;
     }
 
+    function delete_Id($id){
+        // returns an associate array with the record
+        global $db;
+        $sql = "DELETE FROM admins WHERE id ='" . db_escape($db, $id) . "' LIMIT 1";
+        $result = $db->query($sql);
+        if ($result){
+            //update succesfull
+            return true;
+          }else{
+            // update failed
+            echo printf('Error al intentar guardar el registro: %s\n', $db->error);
+            exit;
+          }
+        }
+
     
     function edit_record($record){
         global $db;
@@ -66,13 +92,14 @@
         if(!empty($errors)){
             return $errors;
         }
+        $hashed_password = password_hash($record['password'], PASSWORD_BCRYPT);
 
         $sql = "UPDATE admins SET ";
-        $sql .= "nombre = '" . $record['nombre'] . "', ";
-        $sql .= "apellidos = '" . $record['apellidos'] . "', ";
-        $sql .= "email = '" . $record['email'] . "', ";
-        $sql .= "hashed_password ='" . $record['password'] . "' ";
-        $sql .= "WHERE id = '" . $record['id'] . "' LIMIT 1;";
+        $sql .= "nombre = '" . db_escape($db, $record['nombre']) . "', ";
+        $sql .= "apellidos = '" . db_escape($db, $record['apellidos']) . "', ";
+        $sql .= "email = '" . db_escape($db,$record['email']) . "', ";
+        $sql .= "hashed_password ='" . db_escape($db,$hashed_password) . "' ";
+        $sql .= "WHERE id = '" . db_escape($db,$record['id']) . "' LIMIT 1;";
         // echo $sql;
   
         $result = $db -> query($sql);
@@ -94,11 +121,13 @@
             return $errors;
         }
 
+        $hashed_password = password_hash($record['password'], PASSWORD_BCRYPT);
+        
         $sql = "INSERT INTO admins (nombre, apellidos, email, hashed_password) VALUES (";
-        $sql .= "'" . $record['nombre'] . "',";
-        $sql .= "'" . $record['apellidos'] . "',";
-        $sql .= "'" . $record['email'] . "',";
-        $sql .= "'" . $record['password'] . "')";
+        $sql .= "'" . db_escape($db,$record['nombre']) . "',";
+        $sql .= "'" . db_escape($db,$record['apellidos']) . "',";
+        $sql .= "'" . db_escape($db,$record['email']) . "',";
+        $sql .= "'" . db_escape($db,$hashed_password) . "')";
         $result = $db -> query($sql);
         
         if ($result){
@@ -147,6 +176,8 @@
             $record['id'] = 0;
         }
         if(!has_unique_username($record['email'], $record['id'])){
+            echo $record['email'] . '<br>';
+            echo $record['id'];
             $errors['email'][] = 'Nombre de usuario no disponible';
         }
 
@@ -157,6 +188,18 @@
         if(has_length_less_than($record['password'], 12)){
             $errors['password'][] = 'Su contraseña debe de contenr por lo menos 12 carácteres';
         }
+        if (!preg_match('/[A-Z]/', $record['password'])) {
+            $errors['password'][] = "Debe contener por lo menos una letra mayúscula";
+          } 
+        if (!preg_match('/[a-z]/', $record['password'])) {
+            $errors['password'][] = "Debe contner por lomenos una letra minúscula";
+          } 
+        if (!preg_match('/[0-9]/', $record['password'])) {
+            $errors['password'][] = "Debe contener por lo menos un número";
+          } 
+        if (!preg_match('/[^A-Za-z0-9\s]/', $record['password'])) {
+            $errors['password'][] = "Debe contener por lo menos un sýmbolo";
+          }
         // if(has_inclusion_of($record['password'], [])){
         //     $errors['password'][] = 'Su contraseña debe de contenr por lo menos 12 carácteres';
         // }

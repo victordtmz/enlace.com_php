@@ -1,5 +1,6 @@
 <?php 
     require_once('../../../private/initialize.php'); 
+    require_login();
     $menu_items = $menu_staff;
     //page title will show on browser tab
     $page_title = 'Administradores'; 
@@ -36,6 +37,8 @@
 <section class="inicio sub-nav">
   <div class="content_wrap dark filters">
       <h2>Administradores</h2> 
+      <p>Usuario:</p>
+      <p><?php echo $_SESSION['user']?></p>
       <a href="index.php">Listado</a>
       <a href="show.php?id= <?php echo h(u($id)) ?>">Detalles</a>
       <a href="new.php">Nuevo</a>
@@ -47,7 +50,7 @@
     
     <form method="post" action="<?php echo url_for('/staff/admins/edit.php?id=' . h(u($id))); ?>">
       
-    <div class="form-row">
+      <div class="form-row">
         <label for="admin-nombre">Nombre:</label>
         <?php if(isset($errors['nombre'])){
         foreach($errors['nombre'] as $error){

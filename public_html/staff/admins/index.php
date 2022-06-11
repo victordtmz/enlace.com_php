@@ -1,5 +1,7 @@
 <?php 
     require_once('../../../private/initialize.php'); 
+	// echo $_SESSION['admin_id'];
+	require_login();
 	require_once('queries.php');
     $page_title = 'Staff | Traducciones'; 
     $menu_items = $menu_staff;
@@ -33,8 +35,11 @@
       </div>
         
     </form>
-  </section>
-	<section class="db-list">
+  
+</section>
+<?php include('header.php'); ?>
+<section class="db-list">
+	
 		<?php 
 			if(isset($_POST['trad-list-apply'])){
 				requery();
@@ -60,7 +65,7 @@
 			while($record = $records->fetch_assoc()) { ?>
 				<!-- while($record = mysqli_fetch_assoc($records)) { ?> -->
 			<tr>
-				<td><a class="list-action" href="<?php echo url_for('staff/admins/show.php?id=' . h($record['id'])); ?>"><?php echo h($record['Nombre']); ?></a></td>
+				<td><a class="list-action" href="<?php echo url_for('staff/admins/show.php?id=' . h(u($record['id']))); ?>"><?php echo h($record['Nombre']); ?></a></td>
 				<td><?php echo h($record['Apellidos']); ?></td>
 				<td><?php echo h($record['Email']); ?></td>
 				<!-- <td><a class="list-action" href="<?php //echo url_for('staff/admins/edit.php?id=' . $record['id']); ?>">Editar</a></td> -->
