@@ -7,6 +7,7 @@
   line-height: 1.5;
   text-align: center;
   box-sizing: border-box;
+  /* color: #fff; */
 }
 a{
   color: #690000; 
@@ -82,14 +83,18 @@ body {
   padding: 0px 2%;
   z-index: 2;
 }
-
+/* .overlay-white{
+  background-color: rgba(255, 255, 255, 0.8);
+} */
 .img-item{
   display: flex;
-  padding-top: 80px;
+  /* padding-top: 80px; */
   /* padding: 1rem; */
-  /* margin: 2rem; */
+  padding: 0;
+  margin: .3rem 1rem;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .img-item img{
@@ -462,9 +467,14 @@ table.list tr th {
 
 /*Inicio
 ---------------------------------------------------------*/
-.inicio{
+.sub-header{
   color: #ebe6e3;
   width: 100%;
+  padding: 1rem;
+}
+
+.content-start{
+  padding-top: 1rem;
 }
 
 /*intro
@@ -473,22 +483,11 @@ table.list tr th {
   background-image: url(../images/chris-brignola-X2CxUXFqKcM-unsplash.jpg);
   background-size: cover;
   background-position: top right;
+  box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.8);
+  padding: 2rem 1rem;
+  /* display: flex; */
+  /* background-color: rgba(255, 255, 255, 0.8); */
 }
-.overlay{
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-
-
-.overlay{
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-
 
 .tradShow{
   background-color: #cf9e7f;
@@ -544,6 +543,7 @@ li{
   .img-item{
     flex-direction: row;
     padding: 3rem 1rem;
+    /* padding: 1rem; */
     /* padding-top: 600px; */
   }
   .img-item h5, .img-item p{
@@ -589,7 +589,7 @@ li{
 
 @media screen and (min-width:1024px){
 
-  /* .sec-items{
+  .sec-items{
     margin-right: 2%;
     display: flex;
     flex-wrap: wrap;
@@ -602,17 +602,8 @@ li{
   .logo img{
     padding: 15px 0;
   }
+  
  
-  .nav-links{
-    top: 12vh;
-  }*/
-  .sub-nav{
-    width: 330px;
-    padding: 0 1.3rem;
-  } 
-  .db-list{
-    padding-left: 330px;
-  }
 }
 
 

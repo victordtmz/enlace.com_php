@@ -19,14 +19,14 @@
 <!-- INICIO - GREEN BKGND WITH TITLE -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<section class="inicio">
+<section class="sub-header">
   <div class="content_wrap">
     <h1>Enlace LLC</h1>
     
   </div>
 </section>
-
-<div class="form-box">
+<section class="content-start">
+  <div class="form-box">
   <!-- <div class="form-elements-box"> -->
     <h3>Contacto:</h3>
     <form action="" method="Post">
@@ -117,4 +117,5 @@
     </form>
   <!-- </div> -->
 </div>
+</section>
  

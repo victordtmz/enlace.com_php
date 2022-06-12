@@ -13,7 +13,9 @@
     require_once(PRIVATE_FILES . '/db_credentials.php');
 
     
-    if(!isset($_SESSION['language'])){
+    if(isset($_COOKIE['language'])){
+        $_SESSION['language'] = $_COOKIE['language'];
+    }else {
         $_SESSION['language'] = 'es';
     }
     

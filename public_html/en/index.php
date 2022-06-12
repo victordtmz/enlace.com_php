@@ -1,13 +1,13 @@
 
-<section class="inicio">
+<section class="sub-header">
     <div class="content_wrap">
         <h1>Enlace LLC</h1>
         <!-- <h2>Trámites y servicios para mexicanos en Estados Unidos</h2> -->
         <h2>International Services Provider</h2>
     </div>
-    </section>
+</section>
     <!--o! intro -->
-<section class="intro">
+<section class="intro content-start">
     <div class="overlay">
     <div class="content_wrap intro-content">
         <div class="sec-title">
@@ -34,40 +34,40 @@
         <div class="img-item">
             <img src="<?php echo url_for('private\images/lewis-keegan-XQaqV5qYcXg-unsplash.jpg'); ?>" alt="">
             <div>
-            <h5>Apostillas</h5>
-            <p>Si necesitas un documento con válidez oficial en otro país, te ayudamos a tramitar tu apostilla.</p>
+            <h5>Apostilles</h5>
+            <p>If you are going to use any document abroad, we can help you obtain your apostille or certification.</p>
             </div>
         </div>
 
         <div class="img-item">
             <img src="<?php echo url_for('private\images/spencer-davis-0QcSnCM0aMc-unsplash.jpg'); ?>" alt="">
             <div>
-            <h5>Viajes</h5>
-            <p>Te orientamos si deseas viajar al extranjero y no saben que documentos necesitas para ingresar a otro país o para tu regreso.</p>
+            <h5>Travel abroad</h5>
+            <p>If you  are traveling abroad and don't know what documents or the requirements are needed for such travel, we can help.</p>
             </div>
         </div>
         
         <div class="img-item">
             <img src="<?php echo url_for('private\images/dual.png'); ?>" alt="">
             <div>
-            <h5>Doble nacionalidad</h5>
-            <p>Te ayudamos a ver si calificas y te decimos que documentos necesitas para obtener este doble beneficio.</p>
+            <h5>Dual citizenship</h5>
+            <p>If you think you qualify, but don't know where to start, we can help.</p>
             </div>
         </div>
 
         <div class="img-item">
             <img src="<?php echo url_for('private\images/giammarco-OPzWvgL-upY-unsplash.jpg'); ?>" alt="">
             <div>
-            <h5>Juicios en México</h5>
-            <p>Llevamos juicios civiles en México, para cuestiones de herencias, corrección de documentos, divorcios, custodia, restitución internacional de menores, entre otros.</p>
+            <h5>Trials in Mexico</h5>
+            <p>Our offices are attended by mexican attorneys and we are associated with other mexican law firms, to help you with your trials in Mexico.</p>
             </div>
         </div>
 
         <div class="img-item">
             <img src="<?php echo url_for('private\images/stephen-goldberg-LBLc9M1YrwQ-unsplash.jpg'); ?>" alt="">
             <div>
-            <h5>Servicios Notariales</h5>
-            <p>Redacción de documentos y certificación notarial disponible (Estados Unidos).</p>
+            <h5>Notary services</h5>
+            <p>Document preparation an notary certification available, we specialize in international documents. (service available only in the United States).</p>
             </div>
         </div>
         

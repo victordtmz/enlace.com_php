@@ -38,7 +38,7 @@
         </li>
         <li>
             <a href="<?php echo url_for('set_language.php?lan=' . $new_language . '&page=' . $page); ?>"><?php
-            if($language == 'es'){ echo 'Ingles';}else{echo 'Español';} ?></a>
+            if($language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
         </li>
       </ul>
       <div class="burger">

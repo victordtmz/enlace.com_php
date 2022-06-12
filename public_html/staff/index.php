@@ -7,7 +7,7 @@
     // var_dump($_SESSION)
 ?>
 
-<section class="inicio">
+<section class="sub-header">
     <div class="content_wrap">
         <h1>Enlace LLC</h1>
         <!-- <h2>Trámites y servicios para mexicanos en Estados Unidos</h2> -->
