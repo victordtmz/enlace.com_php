@@ -1,8 +1,5 @@
 <?php 
-    require_once('../private/initialize.php'); 
     $page_title = 'Contacto'; 
-    // $menu_items = $menu_home;
-    include(SHARED_PATH . '/header.php');
 
     if(is_post_request()){
       $c_name = $_POST['contact-name'] ?? '';
@@ -121,9 +118,3 @@
   <!-- </div> -->
 </div>
  
-
-<!-- Close content div before footer -->
-</div>
-<?php 
-    include(SHARED_PATH . '/footer.php');
-?>

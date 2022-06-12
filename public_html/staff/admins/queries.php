@@ -1,4 +1,4 @@
-<?php 
+<?php  
     $db = new mysqli(DB_ADMIN[0],DB_ADMIN[1],DB_ADMIN[2],DB_ADMIN[3]);
 
     // Check connection

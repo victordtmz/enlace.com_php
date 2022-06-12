@@ -1,28 +1,23 @@
 <?php 
     require_once('../../../private/initialize.php'); 
-    $db = traducciones_db_connect();
-    
-    function select_records($sql){
-        // $db = traducciones_db_connect();
-        global $db;
-        $records = mysqli_query($db, $sql);
-        confirm_result_set($records);
-        return $records;
-    }
+    $db = new mysqli(DB_TRADUCCIONES[0],DB_TRADUCCIONES[1],DB_TRADUCCIONES[2],DB_TRADUCCIONES[3]);
 
+    // Check connection
+    if ($db->connect_error) {
+        die("Connection failed: " . $db->connect_error);
+    }
+    
     function select_Id($id){
-        // returns an associate array with the record
         global $db;
         $sql = "SELECT *,
             CONCAT(LPAD(folio,4,0), '/', YEAR(fecha)) AS 'Folio',
             CONCAT(telPais, telNo) AS 'Telefono'
             from traducciones WHERE id ='" . db_escape($db, $id) . "'";
         // echo $sql;
-        $db_record = select_records($sql);
-        $record = mysqli_fetch_assoc($db_record);
-        mysqli_free_result($db_record);
+        $records = $db -> query($sql);
+        $record =  $records -> fetch_assoc();
+        $records -> free_result();
         return $record;
-
     }
 
     
@@ -55,7 +50,8 @@
         
         ;";
         // echo $sql;
-        return select_records($sql);
+        $records = $db -> query($sql);
+        return $records;
     }
 
 ?>

@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 a{
-  color: #690000;
+  color: #690000; 
   margin: 10px auto;
   font-weight: 600;
   width: 100%;
@@ -67,6 +67,9 @@ h6{
   color: #cf9e7f;
 }
 
+.selected a{
+  color: #cf9e7f;
+}
 
 body {
   overflow-x: hidden;

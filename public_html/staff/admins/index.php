@@ -1,7 +1,7 @@
 <?php 
     require_once('../../../private/initialize.php'); 
 	// echo $_SESSION['admin_id'];
-	require_login();
+	require_login(); 
 	require_once('queries.php');
     $page_title = 'Staff | Traducciones'; 
     $menu_items = $menu_staff;

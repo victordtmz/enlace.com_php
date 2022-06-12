@@ -10,6 +10,12 @@
     require_once(PRIVATE_FILES . '/database.php');
     require_once(PRIVATE_FILES . '/validation_functions.php');
     require_once(PRIVATE_FILES . '/auth_functions.php');
+    require_once(PRIVATE_FILES . '/db_credentials.php');
+
+    
+    if(!isset($_SESSION['language'])){
+        $_SESSION['language'] = 'es';
+    }
     
     $menu_home = array(
         'Inicio' => '/index.php',
@@ -21,7 +27,7 @@
         'Staff' => '/staff',
         'Traducciones' => '/staff/traducciones',
         'Admin' => '/staff/admins/',
-        'login' => '/staff/login.php'
+        'login' => '/staff/login.php' 
     );
     
     $signatureStart = '

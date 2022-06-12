@@ -1,11 +1,8 @@
 <?php  
-    // $language = $_SESSION['language'];
-    // $page = $_GET['page'] ?? 'index';
-    if($language == 'es'){
-        $new_language = 'en';
-    }else{
-        $new_language = 'es';
-    }
+    $page_title = (isset($page_title) ? ("Enlace LLC | $page_title") : 'Enlace LLC' );
+    if(!isset($menu_items)){
+        $menu_items = $menu_home;
+    } 
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -13,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlace LLC</title>
+    <title><?php echo h($page_title);?></title>
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/styles.css'); ?>">
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/public.css'); ?>">
     <link rel="icon" type="images/x-icon" href="<?php echo url_for('private/images/enlace.ico'); ?>">
@@ -22,24 +19,16 @@
     <script src="<?php echo url_for('private/js/scripts.js'); ?>" defer></script>
 </head>
 <body>
-<header> 
+<header>
     <nav class="nav-main">
       <div class="logo">
           <img src="<?php echo url_for('private\images\logo.png'); ?>" alt="enlaceLLC">
       </div>
       <ul class="nav-links dark">
-        <li class="<?php if($page == 'index') {echo 'selected';} ?>">
-            <a href="<?php echo url_for('index.php?page=index') ?>" "><?php
-            if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
-        </li>
-        <li class="<?php if($page == 'contact') {echo 'selected';} ?>">
-            <a href="<?php echo url_for('index.php?page=contact') ?>" ><?php
-            if($language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
-        </li>
-        <li>
-            <a href="<?php echo url_for('set_language.php?lan=' . $new_language . '&page=' . $page); ?>"><?php
-            if($language == 'es'){ echo 'Ingles';}else{echo 'Español';} ?></a>
-        </li>
+      <li><a href="<?php echo url_for('index.php?page=index') ?>">Inicio</a></li>
+        <li><a href="<?php echo url_for('index.php?page=contact') ?>">Contacto</a></li>
+        <li><a href="<?php echo url_for('set_language.php?lan=en&page=' . $_GET['page']); ?>">Ingles</a></li>
+
       </ul>
       <div class="burger">
           <div class="line1"></div>
