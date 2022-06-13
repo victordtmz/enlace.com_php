@@ -10,13 +10,13 @@
         <div class="sec-items">
         
             <div class="img-item" >
-                <a href="<?php echo url_for('index.php?page=translations/index') ?>">
+                <!-- <a href="<?php // echo url_for('index.php?page=translations/index') ?>"> -->
                 <img src="<?php echo url_for('private\images\trad.jpg'); ?>" alt="">
                 <div>
                 <h5>Traducciones Oficiales</h5>
                 <p>Traduccion de tus documentos para trámites migratorios, academícos, judiciales y administrativos</p>
                 </div>  
-                </a>
+                <!-- </a> -->
             </div>
             
             <div class="img-item">
