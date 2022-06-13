@@ -82,10 +82,11 @@
             // $email_from = 'admin@enlacellc.com';
             $email_subject = "Consulta de $c_name";
             $email_body = "
-              <strong>Nombre</strong>: $c_name.<br>".
+              <strong>Nombre</strong>: $c_name.<br>" .
               "<strong>Telefono</strong>: $c_phone.<br>".
               "<strong>Email</strong>: $c_email.<br>".
-              "<strong>Consulta</strong>: $c_inquiry.<br>";
+              "<strong>Consulta</strong>: $c_inquiry.<br>".
+              "<strong>Idioma</strong>: $language.<br>";
             
             
             // $headers = "From: $email_from\r\n";

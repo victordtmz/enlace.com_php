@@ -1,6 +1,7 @@
 <?php
     // require_once('../initialize.php'); 
     // Include requred php mailer files
+    $language = $_SESSION['language'] ?? 'es';
     include(PRIVATE_FILES . '/phpMailer/src/Exception.php');
     include(PRIVATE_FILES . '/phpMailer/src/PHPMailer.php');
     include(PRIVATE_FILES . '/phpMailer/src/SMTP.php');
@@ -33,7 +34,7 @@
     
 
     function mailerSend($signature='US',
-        $from = array('victor.m@enlacellc.com', 'Enlace LLC'),
+        $from = array('admin@enlacellc.com', 'Enlace LLC'),
         $to = array('Victor Martinez' => 'abogadovictordomingo@hotmail.com'),
         $subject = 'Enlace LLC',
         $body ='Enlace LLC')
@@ -58,9 +59,23 @@
             $mail->Subject = $subject;
             $mail->Body = $body;
             if (!$mail->send()) {
-                    echo '<pre> Mailer Error: ' . $mail->ErrorInfo . '</pre>';
-                } else {
-                    echo '<p> Mensaje enviado correctamente.</p>';
+                if ($language == 'es'){
+                    echo '<pre> Error al enviar el mensaje, por favor intente nuevamente, si el error persiste, llamenos.  </pre>';
+                }else{
+                    // echo '<pre> Mailer Error: ' . $mail->ErrorInfo . '</pre>';
+                    echo '<pre> Error, message not sent, please try again, if error persists, please call us.  </pre>';
+                }
+
+
+
+
+                    
+                } else 
+                    if ($language == 'es'){
+                    echo '<p> Mensaje enviado correctamente, gracias.  </p>';
+                }else{
+                    // echo '<pre> Mailer Error: ' . $mail->ErrorInfo . '</pre>';
+                    echo '<p> Message sent successfully, thank you.  </p>';
                 }
         }
 

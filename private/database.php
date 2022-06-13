@@ -1,5 +1,5 @@
 <?php 
-    require_once('db_credentials.php');
+    // require_once('credentials.php');
 
     // $db_traducciones = new mysqli(DB_SERVER, DB_TRAD_USER, DB_PASS, DB_TRAD);
     // $db_admin = new mysqli(DB_SERVER, DB_ADMIN_USER, DB_ADMIN_PASS, DB_ADMIN);

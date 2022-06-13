@@ -5,12 +5,13 @@
     define('PRIVATE_FILES', dirname(__FILE__));
     define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
     define('SHARED_PATH', PROJECT_PATH . '/private/shared');
+    define('SHARED', PRIVATE_FILES . '/shared');
 
     require_once(PRIVATE_FILES . '/functions.php');
     require_once(PRIVATE_FILES . '/database.php');
     require_once(PRIVATE_FILES . '/validation_functions.php');
     require_once(PRIVATE_FILES . '/auth_functions.php');
-    require_once(PRIVATE_FILES . '/db_credentials.php');
+    require_once(PRIVATE_FILES . '/credentials.php');
 
     
     if(isset($_COOKIE['language'])){

@@ -1,4 +1,6 @@
 <?php 
+    $page_title = 'Contacto'; 
+
     if(is_post_request()){
       $c_name = $_POST['contact-name'] ?? '';
       $c_phone = $_POST['contact-phone'] ?? '';
@@ -17,35 +19,29 @@
 <!-- INICIO - GREEN BKGND WITH TITLE -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<section class="sub-header">
-  <div class="content_wrap">
-    <h1>Enlace LLC</h1>
-    
-  </div>
-</section>
 <section class="content-start">
-<div class="form-box">
+  <div class="form-box">
   <!-- <div class="form-elements-box"> -->
-    <h3>Contact:</h3>
+    <h3>Contacto:</h3>
     <form action="" method="Post">
       
       <div class="form-row">
-        <label for="contact-name">Name*: </label>
+        <label for="contact-name">Nombre*: </label>
         <input type="text" name="contact-name" id="contact-name" value="<?php echo $c_name;?>" required aria-required="true">
       </div> 
       
       <div class="form-row">
         <fieldset>
-          <legend>Country:</legend>
+          <legend>País:</legend>
           
-        <label for="US"><input type="radio" name="contact-pais" value="US" id="US" <?php echo ($c_signature == 'US' ? 'checked' : '' );?>>United States</label>
-        <label for="Mexico"><input type="radio" name="contact-pais" value="Mexico" id="Mexico" <?php echo ($c_signature == 'Mexico' ? 'checked':''); ?>>Mexico</label>
+        <label for="US"><input type="radio" name="contact-pais" value="US" id="US" <?php echo ($c_signature == 'US' ? 'checked' : '' );?>>Estados Unidos</label>
+        <label for="Mexico"><input type="radio" name="contact-pais" value="Mexico" id="Mexico" <?php echo ($c_signature == 'Mexico' ? 'checked':''); ?>>México</label>
 
       </fieldset>
       </div> 
      
       <div class="form-row">
-          <label for="contact-phone">Phone*: </label>
+          <label for="contact-phone">Teléfono*: </label>
           <input type="tel" name="contact-phone" id="contact-phone" required value="<?php echo $c_phone;?>">
         </div>
         
@@ -54,15 +50,15 @@
           <input type="email" id="contact-email" name="contact-email" value="<?php echo $c_email;?>">
         </div>
         <div class="form-row">
-          <label for="contact-inquiry">Inquiry*: </label>
+          <label for="contact-inquiry">Consulta*: </label>
           <textarea name="contact-inquiry" id="contact-inquiry" 
-            cols="30" rows="5" placeholder="How can we help you" required aria-required="true"><?php echo $c_inquiry;?></textarea>
+            cols="30" rows="5" placeholder="En que te podemos ayudar" required aria-required="true"><?php echo $c_inquiry;?></textarea>
         </div>
         
         <div class="g-recaptcha"  name="g-recaptcha-response"  
           data-sitekey="<?php echo CAPTCHA_SITE_KEY?>"></div>
         
-        <input type="submit" value="Send" name="submit">
+        <input type="submit" value="Enviar" name="submit">
         
         <div class="form-status">
       
@@ -75,13 +71,12 @@
             $c_email = $_POST['contact-email'];
             $c_inquiry = $_POST['contact-inquiry'];
             $c_signature = $_POST['contact-pais'];
-            // $c_language = $_SESSION['language'];
             
           
             // $email_from = 'admin@enlacellc.com';
             $email_subject = "Consulta de $c_name";
             $email_body = "
-              <strong>Nombre</strong>: $c_name.<br>".
+              <strong>Nombre</strong>: $c_name.<br>" .
               "<strong>Telefono</strong>: $c_phone.<br>".
               "<strong>Email</strong>: $c_email.<br>".
               "<strong>Consulta</strong>: $c_inquiry.<br>".
@@ -108,7 +103,7 @@
               mailerSend(to: $email_enlace, subject: $email_subject, body: $enlace_body, signature: $c_signature);
               mailerClose();
             } else{
-              echo "<pre>Invalid reCaptcha, please try again</pre>";
+              echo "<pre>Captcha invalido, intenta nuevamente</pre>";
             }
           }
           ?>
@@ -117,6 +112,5 @@
     </form>
   <!-- </div> -->
 </div>
- 
-
 </section>
+ 

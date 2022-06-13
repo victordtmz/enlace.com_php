@@ -1,4 +1,8 @@
 <?php 
+    $page_title = 'Contacto'; 
+    // $menu_items = $menu_home;
+ 
+
     if(is_post_request()){
       $c_name = $_POST['contact-name'] ?? '';
       $c_phone = $_POST['contact-phone'] ?? '';
@@ -17,12 +21,7 @@
 <!-- INICIO - GREEN BKGND WITH TITLE -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<section class="sub-header">
-  <div class="content_wrap">
-    <h1>Enlace LLC</h1>
-    
-  </div>
-</section>
+
 <section class="content-start">
 <div class="form-box">
   <!-- <div class="form-elements-box"> -->

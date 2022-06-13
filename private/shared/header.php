@@ -50,5 +50,19 @@
 </header>
 <div class="content">
 
+<section class="sub-header">
+    <div class="content_wrap">
+        <h1>Enlace LLC</h1>
+        <h2>
+            <?php if($language == 'en'){
+                echo 'International Services Provider';
+            } else{
+                echo 'Despacho de Servicios Internacionales';
+            } ?>    
+        </h2>
+    </div>
+    </section>
+<section class="intro content-start">
+
     
 
