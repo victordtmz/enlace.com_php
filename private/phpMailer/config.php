@@ -2,9 +2,9 @@
     // require_once('../initialize.php'); 
     // Include requred php mailer files
     $language = $_SESSION['language'] ?? 'es';
-    include(PRIVATE_FILES . '/phpMailer/src/Exception.php');
-    include(PRIVATE_FILES . '/phpMailer/src/PHPMailer.php');
-    include(PRIVATE_FILES . '/phpMailer/src/SMTP.php');
+    include(PRIVATE_PATH . '/phpMailer/src/Exception.php');
+    include(PRIVATE_PATH . '/phpMailer/src/PHPMailer.php');
+    include(PRIVATE_PATH . '/phpMailer/src/SMTP.php');
 
     // Define name spaces
     use PHPMailer\PHPMailer\PHPMailer;
@@ -43,6 +43,7 @@
             global  $mail;
             global $signatureUS;
             global $signatureMexico;
+            global $language;
             if(strtoupper($signature) == 'MEXICO'){
                 $signature = SIGNATURE_MEXICO;
             }else{

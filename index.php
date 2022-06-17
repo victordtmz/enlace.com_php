@@ -1,1 +1,3 @@
-<?php header("Location: public_html" );
+<?php 
+    require_once('private/initialize.php'); 
+    redirect_to(url_for('guanajuato/index.php'));

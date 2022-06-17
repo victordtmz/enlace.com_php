@@ -1,17 +1,32 @@
 <?php
     ob_start();
     session_start();
-    define("WWW_ROOT", '/enlace/public_html');
-    define('PRIVATE_FILES', dirname(__FILE__));
-    define('PROJECT_PATH', dirname(PRIVATE_FILES) . '/public_html');
-    define('SHARED_PATH', PROJECT_PATH . '/private/shared');
-    define('SHARED', PRIVATE_FILES . '/shared');
 
-    require_once(PRIVATE_FILES . '/functions.php');
-    require_once(PRIVATE_FILES . '/database.php');
-    require_once(PRIVATE_FILES . '/validation_functions.php');
-    require_once(PRIVATE_FILES . '/auth_functions.php');
-    require_once(PRIVATE_FILES . '/credentials.php');
+    
+    define('PRIVATE_PATH', dirname(__FILE__));
+    define('PROJECT_PATH', dirname(PRIVATE_PATH));
+    define('SHARED_PATH', PRIVATE_PATH . '/shared');
+    define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
+    
+    
+    // echo PRIVATE_PATH . '<br>';
+    // 
+    // echo PROJECT_PATH ;
+    // 
+    // define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
+    // define('SHARED', PRIVATE_PATH . '/shared');
+
+    if (str_contains(PRIVATE_PATH, 'C:\\')){
+        define("WWW_ROOT", '/enlacellc.com');
+    }else{
+        define("WWW_ROOT", 'https://guanajuato.enlacellc.com');
+    }
+
+    require_once(SHARED_PATH . '/functions.php');
+    // require_once(PRIVATE_PATH . '/database.php');
+    require_once(SHARED_PATH . '/validation_functions.php');
+    require_once(SHARED_PATH . '/auth_functions.php');
+    require_once(SHARED_PATH . '/credentials.php');
 
     
     if(isset($_COOKIE['language'])){
