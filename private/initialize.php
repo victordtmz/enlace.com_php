@@ -19,7 +19,7 @@
     if (str_contains(PRIVATE_PATH, 'C:\\')){
         define("WWW_ROOT", '/enlacellc.com');
     }else{
-        define("WWW_ROOT", 'https://guanajuato.enlacellc.com');
+        define("WWW_ROOT", 'https://enlacellc.com');
     }
 
     require_once(SHARED_PATH . '/functions.php');
