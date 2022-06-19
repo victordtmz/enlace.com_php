@@ -36,9 +36,8 @@
         }
         ?>
         <div class="location">
-          <h6><?php echo $mexico?>:</h6>
           <p><?php echo $prolongacion?> Mina 110, Centro</p>
-          <p><?php echo $jerecuaro?>, Guanajuato 38540</p>
+          <p><?php echo $jerecuaro?>, Guanajuato 38540, <?php echo $mexico?></p>
           <p>461-265-4168</p>
         </div>
       </div>
