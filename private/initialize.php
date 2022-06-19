@@ -6,7 +6,9 @@
     define('PRIVATE_PATH', dirname(__FILE__));
     define('PROJECT_PATH', dirname(PRIVATE_PATH));
     define('SHARED_PATH', PRIVATE_PATH . '/shared');
+    define('PAGES_PATH', PROJECT_PATH . '/pages');
     define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
+    define('TRI_CITIES_PAGES_PATH', PROJECT_PATH . '/tri-cities/pages');
     
     
     // echo PRIVATE_PATH . '<br>';

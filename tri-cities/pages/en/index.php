@@ -60,7 +60,7 @@
             <img src="<?php echo url_for('private\images/stephen-goldberg-LBLc9M1YrwQ-unsplash.jpg'); ?>" alt="">
             <div>
             <h5>Notary services</h5>
-            <p>Document preparation an notary certification available, we specialize in international documents. (service available only in the United States).</p>
+            <p>Document preparation an notary certification available, we specialize in international documents.</p>
             </div>
         </div>
         

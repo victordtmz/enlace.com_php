@@ -38,7 +38,7 @@
             <img src="<?php echo url_for('private\images/liam-truong-htpU_wGEcW0-unsplash.jpg'); ?>" alt="">
             <div>
             <h5>Certified Documents</h5>
-            <p>Request and ammendments of your official documents like Birth, Death, Marriage and other Certificates.</p>
+            <p>Request and ammendments of your official documents like Birth, Death, Marriage, and other Certificates.</p>
             </div>
         </div>
 
