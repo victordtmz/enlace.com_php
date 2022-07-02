@@ -112,8 +112,19 @@ background-color: #001a35;
     padding: 2rem 2%;
     z-index: 2;
   }
+  .menu_wrapper *{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .menu_wrapper {
+    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.9);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+
+  }
   .menu_wrapper h1{
     color: #003b75;
+
   }
 
   /* .menu_items{
@@ -688,23 +699,23 @@ background-color: #001a35;
   
   /*Migratorios
   --------------------------------------------------------------*/
-  .migratorios *{
+  /* .migratorios *{
     font-family: Arial, Helvetica, sans-serif;
-  }
+  } */
   .migratorios{
     background-image: url(../images/samuel-schneider-wEow4WdiAbg-unsplash.jpg);
-    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.9);
+    /* box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.9);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; 
-    /* background-position: -50%; */
-    /* display: grid;
-    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
-  
-    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
-    
-    color: #fff;
-    min-height: 900px; */
+    background-size: cover;  */
+  }
+
+  .juicios{
+    background-image: url(../images/giammarco-OPzWvgL-upY-unsplash.jpg);
+    /* box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.9);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;  */
   }
   
   /*1024 - Desctop - Max Screen Size
