@@ -12,7 +12,7 @@
     }
     //render links for pages for developer mode
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
-        <!-- <header> 
+        <header> 
             <nav class="nav-main">
                 
                 <ul class="nav-links dark">
@@ -33,7 +33,7 @@
         </header>
         <br>
         <br>
-        <br> -->
+        <br>
     <?php }
 
     $header = PROJECT_PATH . '/shared/header.php';

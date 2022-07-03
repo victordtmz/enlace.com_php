@@ -6,18 +6,16 @@
     $_SESSION['website'] = 'mexico';
     
     // source page
-    $content = GTO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
+    
+    $content = MEXICO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
     if (!file_exists($content)){
-        //secondary page
-        $content = MEXICO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
+        //third option
+        $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
         if (!file_exists($content)){
-            //third option
-            $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
-            if (!file_exists($content)){
-                redirect_to(url_for('guanajuato/index.php'));
-            }
+            redirect_to(url_for('guanajuato/index.php'));
         }
     }
+    
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
         <header> 
             <nav class="nav-main">
