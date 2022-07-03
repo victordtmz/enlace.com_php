@@ -108,7 +108,7 @@ a:hover h5{
   }
 
 .img-item:hover img{
-    width: 240;
+    width: 200;
     opacity: 1;
     vertical-align: middle;
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
@@ -118,7 +118,7 @@ a:hover h5{
   .img-item img{
     margin-left: 1rem;
     opacity: .8;
-    width: 180px;
+    width: 190px;
     vertical-align: middle;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     transition: all .5s ease-in;

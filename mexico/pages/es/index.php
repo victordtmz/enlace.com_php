@@ -7,9 +7,9 @@
         <div class="sec-items">
         
             <?php 
-                include(SHARED_PAGES . '/es/img-items/juicios.php');
-                include(SHARED_PAGES . '/es/img-items/traducciones.php');
-                include(SHARED_PAGES . '/es/img-items/migratorios.php');
+                include(SHARED_PAGES . '/img-items/juicios.php');
+                include(SHARED_PAGES . '/img-items/traducciones.php');
+                include(SHARED_PAGES . '/img-items/migratorios.php');
             ?>
 
         </div>

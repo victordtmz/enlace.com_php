@@ -6,13 +6,12 @@
     $_SESSION['website'] = 'mexico';
     
     // source page
-    
-    $content = MEXICO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
+    $page_address = '/' . $language . '/' . $page . '.php';
+    $content = MEXICO_PAGES_PATH . $page_address;
     if (!file_exists($content)){
-        //third option
-        $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
+        $content = PAGES_PATH . $page_address;
         if (!file_exists($content)){
-            redirect_to(url_for('guanajuato/index.php'));
+            redirect_to(url_for('/index.php'));
         }
     }
     

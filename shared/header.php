@@ -9,8 +9,8 @@
             // Idioma actual español
             'immigration/I-130' => 'I-130',
             'immigration/index' => 'Migratorios',
-            'juicios/index' => 'Juicios',
-            'juicios/divorcio' => 'Divorcio',
+            'trials/index' => 'Juicios',
+            'trials/divorcio' => 'Divorcio',
             'index' => 'Inicio',
             'contact' => 'Contacto',
             default => ''
@@ -22,8 +22,8 @@
             //idioma actual inglés
             'immigration/I-130' => 'I-130',
             'immigration/index' => 'Immigration',
-            'juicios/divorcio' => 'Divorce',
-            'juicios/index' => 'Trials',
+            'trials/divorcio' => 'Divorce',
+            'trials/index' => 'Trials',
             'index' => 'Home',
             'contact' => 'Contact',
             default => ''

@@ -4,11 +4,14 @@
     $page = $_GET['page'] ?? 'index'; 
     $website = 'tri-cities';
     $_SESSION['website'] = 'tri-cities';
-
-    $content = TRI_CITIES_PAGES_PATH . '/' . $language . '/' . $page . '.php';
-    // if (!file_exists($content)){
-    //     redirect_to(url_for('tri-cities/index.php'));
-    // }
+    $page_path = '/' . $language . '/' . $page . '.php';
+    $content = TRI_CITIES_PAGES_PATH . $page_path;
+    if (!file_exists($content)){
+        $content = PAGES_PATH . $page_path;
+        if (!file_exists($content)){
+            redirect_to(url_for('index.php'));
+        }
+    }
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
         <header> 
             <nav class="nav-main">

@@ -12,7 +12,6 @@
     }
     //render links for pages for developer mode
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
-        <header> 
             <nav class="nav-main">
                 
                 <ul class="nav-links dark">
@@ -30,7 +29,6 @@
                     </li>
                 </ul>
             </nav>
-        </header>
         <br>
         <br>
         <br>
