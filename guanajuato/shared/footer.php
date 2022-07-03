@@ -1,4 +1,4 @@
-<footer class="dark">
+<footer class="dark"> 
       <div class="social-icons">
         
         <a href="https://wa.me/524612654168">
@@ -24,6 +24,8 @@
           </svg>
         </a>
       </div>
+
+      
         <?php
         if($language == 'es') {
           $mexico =  'México' ;

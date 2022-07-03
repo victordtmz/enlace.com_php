@@ -35,7 +35,10 @@
     <title><?php echo $title; ?></title>
     <!-- <link rel="stylesheet" media="all" href="https://enlacellc.com/private/css/styles.css"> -->
     <!-- <link rel="stylesheet" media="all" href="https://enlacellc.com/private/css/public.css"> -->
+    <!-- <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/styles.css'); ?>"> -->
+    <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/dark.css'); ?>">
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/styles.css'); ?>">
+    <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/header_footer.css'); ?>">
     <link rel="icon" type="images/x-icon" href="<?php echo url_for('private/images/enlace.ico'); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Franklin&display=swap" rel="stylesheet">
     <script src="<?php echo url_for('private/js/header.js'); ?>" defer></script>
@@ -43,7 +46,7 @@
 </head>
 <body>
 <header> 
-    <nav class="nav-main">
+    <nav class="nav-main dark">
       <div class="logo">
           <img src="<?php echo url_for('private\images\logo.png'); ?>" alt="enlaceLLC">
       </div>
@@ -68,10 +71,9 @@
       </div>
   </nav>
 </header>
-<div class="content">
 
-<section class="sub-header">
-    <div class="content_wrap">
+<section class="sub-header dark">
+    <div class="">
         <h1>Enlace LLC - Guanajuato</h1>
         <h2>
             <?php if($language == 'en'){
@@ -81,4 +83,4 @@
             } ?>    
         </h2>
     </div>
-</section>
+</section> 
