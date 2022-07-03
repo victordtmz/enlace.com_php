@@ -3,16 +3,17 @@
     $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index'; 
     // $website = 'mexico';
-    $_SESSION['website'] = 'mexico';
+    $_SESSION['website'] = 'guanajuato';
     
     // source page
-    $content = GTO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
+    $page_address = '/' . $language . '/' . $page . '.php';
+    $content = GTO_PAGES_PATH . $page_address;
     if (!file_exists($content)){
         //secondary page
-        $content = MEXICO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
+        $content = MEXICO_PAGES_PATH . $page_address;
         if (!file_exists($content)){
             //third option
-            $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
+            $content = PAGES_PATH . $page_address;
             if (!file_exists($content)){
                 redirect_to(url_for('guanajuato/index.php'));
             }

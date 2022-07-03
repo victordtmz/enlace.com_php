@@ -6,7 +6,7 @@
         $title = match ($page){
             'immigration/I-130' => 'I-130',
             'immigration/index' => 'Migratorios',
-            'juicios/index' => 'Trials',
+            'trials/index' => 'Trials',
             'index' => 'Inicio',
             'contact' => 'Contacto',
             default => ''
@@ -17,7 +17,7 @@
         $title = match ($page){
             'immigration/I-130' => 'I-130',
             'immigration/index' => 'Immigration',
-            'juicios/index' => 'Juicios',
+            'trials/index' => 'Juicios',
             'index' => 'Home',
             'contact' => 'Contact',
             default => ''
