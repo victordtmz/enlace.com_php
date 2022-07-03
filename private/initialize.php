@@ -1,14 +1,16 @@
 <?php
     ob_start();
-    session_start();
+    session_start(); 
 
     
     define('PRIVATE_PATH', dirname(__FILE__));
     define('PROJECT_PATH', dirname(PRIVATE_PATH));
+    define('SHARED_PAGES', PROJECT_PATH . '/shared');
     define('SHARED_PATH', PRIVATE_PATH . '/shared');
     define('PAGES_PATH', PROJECT_PATH . '/pages');
     define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
     define('TRI_CITIES_PAGES_PATH', PROJECT_PATH . '/tri-cities/pages');
+    define('MEXICO_PAGES_PATH', PROJECT_PATH . '/mexico/pages');
     
     
     // echo PRIVATE_PATH . '<br>';
@@ -18,10 +20,12 @@
     // define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
     // define('SHARED', PRIVATE_PATH . '/shared');
 
-    if (str_contains(PRIVATE_PATH, 'C:\\')){
-        define("WWW_ROOT", '/enlacellc.com');
+    if (str_starts_with(PRIVATE_PATH, 'C:\\')){
+        define("WWW_ROOT", '/enlacellc.com'); 
+        $_SESSION['mode'] = 'developer';
     }else{
         define("WWW_ROOT", 'https://enlacellc.com');
+        $_SESSION['mode'] = 'live';
     }
 
     require_once(SHARED_PATH . '/functions.php');

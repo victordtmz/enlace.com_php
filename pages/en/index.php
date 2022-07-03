@@ -49,11 +49,13 @@
         </div>
 
         <div class="img-item">
+            <a href="<?php echo url_for('/index.php?page=juicios/index') ?>">
             <img src="<?php echo url_for('private\images/giammarco-OPzWvgL-upY-unsplash.jpg'); ?>" alt="">
             <div>
             <h5>Trials in Mexico</h5>
             <p>Our offices are attended by mexican attorneys and we are associated with other mexican law firms, to help you with your trials in Mexico.</p>
             </div>
+            </a>
         </div>
 
         <div class="img-item">

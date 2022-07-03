@@ -19,22 +19,21 @@
 <!-- INICIO - GREEN BKGND WITH TITLE -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<section class="content-start">
-  <div class="form-box">
-  <!-- <div class="form-elements-box"> -->
-    <h3><?php echo $label_heading; ?>:</h3>
-    <form action="" method="Post">
-      
-      <div class="form-row">
-        <label for="contact-name"><?php echo $label_name; ?>*: </label>
-        <input type="text" name="contact-name" id="contact-name" value="<?php echo $c_name;?>" required aria-required="true">
-      </div> 
-      
-      <div class="form-row">
+<section class="content">
+  <div class="content_wrap">
+    <div class="form-box">
+      <h3><?php echo $label_heading; ?>:</h3>
+      <form action="" method="Post">
+        
+        <div class="form-row">
+          <label for="contact-name"><?php echo $label_name; ?>*: </label>
+          <input type="text" name="contact-name" id="contact-name" value="<?php echo $c_name;?>" required aria-required="true">
+        </div> 
+        <div class="form-row">
           <label for="contact-phone"><?php echo $label_phone; ?>*: </label>
           <input type="tel" name="contact-phone" id="contact-phone" required value="<?php echo $c_phone;?>">
         </div>
-        
+
         <div class="form-row">
           <label for="contact-email"><?php echo $label_email; ?>: </label>
           <input type="email" id="contact-email" name="contact-email" value="<?php echo $c_email;?>">
@@ -99,7 +98,19 @@
           ?>
       </div>
 
-    </form>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+      
+        
+        
+
+    
   <!-- </div> -->
 </div>
 </section>

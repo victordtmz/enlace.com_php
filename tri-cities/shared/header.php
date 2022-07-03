@@ -68,7 +68,6 @@
       </div>
   </nav>
 </header>
-<div class="content">
 
 <section class="sub-header">
     <div class="content_wrap">
