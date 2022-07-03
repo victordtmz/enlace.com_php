@@ -1,62 +1,65 @@
 <?php
     function set_url_for($url){
         if ($_SESSION['website'] == 'enlace'){
-            return url_for($url);
+            $www_root = WWW_ENLACE;
         }elseif ($_SESSION['website'] == 'guanajuato'){
-            return url_for_guanajuato($url);
+            $www_root = WWW_GTO;
         }elseif ($_SESSION['website'] == 'mexico'){
-            return url_for_mexico($url);
-            echo 'Mexico';
+            $www_root = WWW_MX;
         }elseif ($_SESSION['website'] == 'tri-cities'){
-            return url_for_tri_cities($url);
+            $www_root = WWW_TRI;
         }
+        if($url[0] != '/'){
+            $url = '/' . $url;
+        }
+        return $www_root . $url;
     }
     
     function url_for($script_path) {  
         if($script_path[0] != '/'){
             $script_path = '/' . $script_path;
         }
-        return WWW_ROOT . $script_path;
+        return WWW_ENLACE . $script_path;
     }
 
-    function url_for_tri_cities($path){
-        if($path[0] != '/'){
-            $path = '/' . $path;
-        }
-        if ($_SESSION['mode'] == 'live'){
-            return 'tri-cities/' . WWW_ROOT . $path;
-        }
-        else{
-            return WWW_ROOT . '/tri-cities' . $path;
-        }
+    // function url_for_tri_cities($path){
+    //     if($path[0] != '/'){
+    //         $path = '/' . $path;
+    //     }
+    //     if ($_SESSION['mode'] == 'live'){
+    //         return 'tri-cities/' . WWW_ENLACE . $path;
+    //     }
+    //     else{
+    //         return WWW_ENLACE . '/tri-cities' . $path;
+    //     }
         
-    }
+    // }
 
-    function url_for_guanajuato($path){
-        if($path[0] != '/'){
-            $path = '/' . $path;
-        }
-        if ($_SESSION['mode'] == 'live'){
-            return 'guanajuato/' . WWW_ROOT . $path;
-        }
-        else{
-            return WWW_ROOT . '/guanajuato' . $path;
-        }
-        // return 'guanajuato' . WWW_ROOT . $path;
-    }
+    // function url_for_guanajuato($path){
+    //     if($path[0] != '/'){
+    //         $path = '/' . $path;
+    //     }
+    //     if ($_SESSION['mode'] == 'live'){
+    //         return 'guanajuato/' . WWW_ENLACE . $path;
+    //     }
+    //     else{
+    //         return WWW_ENLACE . '/guanajuato' . $path;
+    //     }
+    //     // return 'guanajuato' . WWW_ENLACE . $path;
+    // }
 
-    function url_for_mexico($path){
-        if($path[0] != '/'){
-            $path = '/' . $path;
-        }
-        if ($_SESSION['mode'] == 'live'){
-            return 'mexico/' . WWW_ROOT . $path;
-        }
-        else{
-            return WWW_ROOT . '/mexico' . $path;
-        }
-        // return 'mexico' . WWW_ROOT . $path;
-    }
+    // function url_for_mexico($path){
+    //     if($path[0] != '/'){
+    //         $path = '/' . $path;
+    //     }
+    //     if ($_SESSION['mode'] == 'live'){
+    //         return 'mexico/' . WWW_ENLACE . $path;
+    //     }
+    //     else{
+    //         return WWW_ENLACE . '/mexico' . $path;
+    //     }
+    //     // return 'mexico' . WWW_ENLACE . $path;
+    // }
 
     function u($string=""){
         return urlencode($string);

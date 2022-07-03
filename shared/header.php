@@ -50,9 +50,7 @@
     <script src="<?php echo url_for('private/js/header.js'); ?>" defer></script>
     <script src="<?php echo url_for('private/js/scripts.js'); ?>" defer></script>
 </head>
-    
-    
-
+ 
 <body>
 <header> 
     <nav class="nav-main dark">

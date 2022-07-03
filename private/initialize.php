@@ -14,17 +14,23 @@
     
     
     // echo PRIVATE_PATH . '<br>';
-    // 
+    //  
     // echo PROJECT_PATH ;
     // 
     // define('GTO_PAGES_PATH', PROJECT_PATH . '/guanajuato/pages');
     // define('SHARED', PRIVATE_PATH . '/shared');
 
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){
-        define("WWW_ROOT", '/enlacellc.com'); 
+        define("WWW_ENLACE", '/enlacellc.com'); 
+        define("WWW_TRI", '/enlacellc.com/tri-cities');
+        define("WWW_MX", '/enlacellc.com/mexico');
+        define("WWW_GTO", '/enlacellc.com/guanajuato');
         $_SESSION['mode'] = 'developer';
     }else{
-        define("WWW_ROOT", 'https://enlacellc.com');
+        define("WWW_ENLACE", 'https://enlacellc.com');
+        define("WWW_TRI", 'https://tri-cities.enlacellc.com/');
+        define("WWW_MX", 'https://mexico.enlacellc.com/');
+        define("WWW_GTO", 'https://guanajuato.enlacellc.com/');
         $_SESSION['mode'] = 'live';
     }
 
