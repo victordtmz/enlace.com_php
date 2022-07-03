@@ -1,0 +1,31 @@
+.dark{
+    background-color: #001a35;
+    color: #ebe6e3;
+}
+
+.dark a {
+    color: #7EAED9;
+    
+  }
+  
+.dark a:hover {
+    color: #F29850;
+  }
+  
+.dark h1,.dark h2{
+    font-family: 'Caveat', cursive;
+    /* text-align: center; */
+  }
+
+.dark .selected a{
+    color: #F29850;
+  }
+
+.dark h1{
+    font-size: 3rem;
+    /* padding: 1rem 0; */
+  }
+.dark p, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6{
+    color: #ebe6e3;
+}
+
