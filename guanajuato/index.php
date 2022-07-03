@@ -1,8 +1,10 @@
 <?php 
     require_once('../private/initialize.php'); 
     $language = $_SESSION['language'];
-    $page = $_GET['page'] ?? 'index';
-    $_SESSION['website'] = 'guanajuato';
+    $page = $_GET['page'] ?? 'index'; 
+    // $website = 'mexico';
+    $_SESSION['website'] = 'mexico';
+    
     // source page
     $content = GTO_PAGES_PATH . '/' . $language . '/' . $page . '.php';
     if (!file_exists($content)){
@@ -49,7 +51,6 @@
     // $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
     include($content);
     
-
     // Render Footer. 
     $footer = PROJECT_PATH . '/shared/footer.php';
     include($footer);
