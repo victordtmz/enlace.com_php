@@ -16,7 +16,7 @@
         <header> 
             <nav class="nav-main">
                 
-                <ul class="nav-links dark">
+                <ul class="nav-menu dark">
                     <li>
                         <a href="<?php echo url_for('/index.php') ?>" >Enlace</a>
                     </li>

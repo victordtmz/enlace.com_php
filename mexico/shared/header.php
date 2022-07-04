@@ -47,7 +47,7 @@
       <div class="logo">
           <img src="<?php echo url_for('private\images\logo.png'); ?>" alt="enlaceLLC">
       </div>
-      <ul class="nav-links dark">
+      <ul class="nav-menu dark">
         <li class="<?php if($page == 'index') {echo 'selected';} ?>">
             <a href="<?php echo url_for('guanajuato/index.php?page=index') ?>" ><?php
             if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
@@ -62,9 +62,9 @@
         </li>
       </ul>
       <div class="burger">
-          <div class="line1"></div>
-          <div class="line3"></div>
-          <div class="line2"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
       </div>
   </nav>
 </header>

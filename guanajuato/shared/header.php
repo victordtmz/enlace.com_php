@@ -50,7 +50,7 @@
       <div class="logo">
           <img src="<?php echo url_for('private\images\logo.png'); ?>" alt="enlaceLLC">
       </div>
-      <ul class="nav-links dark">
+      <ul class="nav-menu dark">
         <li class="<?php if($page == 'index') {echo 'selected';} ?>">
             <a href="<?php echo url_for('guanajuato/index.php?page=index') ?>" ><?php
             if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>

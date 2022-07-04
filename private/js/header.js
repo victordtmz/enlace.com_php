@@ -1,32 +1,40 @@
-// header.innerHTML = `<h1>Enlace LLC</h1>
-// <h2>Asesoría legal para mexicanos en Estados Unidos</h3>`
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('.nav-menu');
 
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+burger.addEventListener('click',() =>{
+    burger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+} )
 
-    burger.addEventListener('click', ()=>{
-        //toggle nav
-        nav.classList.toggle('nav-active');
-        //animate links
-        navLinks.forEach((link, index )=>{
-            if (link.style.animation){
-                link.style.animation = '';
-            }else{
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7 + .3}s`;
-            console.log(index/7)
-            }
+
+
+
+// const navSlide = () => {
+//     const burger = document.querySelector('.burger');
+//     const nav = document.querySelector('.nav-menu');
+//     const navLinks = document.querySelectorAll('.nav-menu li');
+
+//     burger.addEventListener('click', ()=>{
+//         //toggle nav
+//         nav.classList.toggle('nav-active');
+//         //animate links
+//         navLinks.forEach((link, index )=>{
+//             if (link.style.animation){
+//                 link.style.animation = '';
+//             }else{
+//                 link.style.animation = `navLinkFade 0.5s ease forwards ${index/7 + .3}s`;
+//             console.log(index/7)
+//             }
             
-        });
-        // //burger animation
-        // burger.classList.toggle('toggle');
-    });
+//         });
+//         // //burger animation
+//         // burger.classList.toggle('toggle');
+//     });
     
     
 
-}
-navSlide();
+// }
+// navSlide();
 // const app = () =>{
 //     navSlide();
 // }

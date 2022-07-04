@@ -11,7 +11,7 @@ header{
 .sub-header{
  padding: 4rem 0;
 }
-.nav-main{/*nav contains logo to left and nav-links to right*/
+.nav-main{/*nav contains logo to left and nav-menu to right*/
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,49 +20,63 @@ header{
     
 }
 
-.nav-links{/*ul of navigation links*/
+.nav-menu{/*ul of navigation links*/
     list-style: none;
     padding: 0;
     margin: 0;
     justify-content: flex-start;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     right: 0px;
     /* height: 30vh; */
     top: 8vh;
+    right: -100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 30%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    /* transform: translateX(100%); */
+    /* transition: transform 1.5s ease-in; */
+    transition: .3s;
 }
-.nav-links li{
+.nav-menu li{
     margin: 1rem auto;
   }
-.nav-links li a{
+.nav-menu li a{
     font-size: 1.2rem;
     letter-spacing: 1px;
     font-weight: 500;
     /* color: #ebe6e3; */
   }
-  .nav-active{
-    
-    transform: translateX(0%);
+  .nav-menu.active{
+    right: 0;
+    /* transform: translateX(0%); */
   }
 
 .burger{
     cursor: pointer;
   }
-  /* .burger div:hover{
-    color: #cf9e7f;
-  } */
+
   
-  .burger div{
+  
+  .bar{
     width:25px;
     height: 3px;
     background-color: #ebe6e3;
     margin: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
+
+  .burger.active .bar:nth-child(2){
+    opacity: 0;
+  } 
+  .burger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  } 
+  .burger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  } 
  
   .logo img{
       width: 55px;
@@ -86,10 +100,11 @@ header{
     /* .nav-main{
         height: 12vh;
     } */
-    .nav-links{
+    .nav-menu{
         position: relative;
         flex-direction: row;
-        transform: translateX(0%);
+        /* transform: translateX(0%); */
+        right: 0;
         top: 0;
         width: 70%;
     }
@@ -108,7 +123,7 @@ header{
 }
 
 @media screen and (min-width:900px){
-    .nav-links{
+    .nav-menu{
         width: 60%;
         max-width: 600px;
     }

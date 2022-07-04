@@ -11,30 +11,31 @@
         redirect_to(url_for('index.php'));
     }
     //render links for pages for developer mode
-    if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
-            <nav class="">
-                <ul class="dark">
-                    <li>
-                        <a href="<?php echo url_for('/index.php'); ?>" >Enlace</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo url_for('/guanajuato'); ?>" >Guanajuato</a>
-                    </li>
-                    <li>
-                    <a href="<?php echo url_for('/mexico'); ?>" >Mexico</a>
-                    </li>
-                    <li>
-                    <a href="<?php echo url_for('/tri-cities'); ?>" >TriCities</a>
-                    </li>
-                </ul>
-            </nav>
-        <br>
-        <br>
-        <br>
-    <?php }
+    
 
     $header = PROJECT_PATH . '/shared/header.php';
     include($header);
+    if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
+        <nav class="">
+            <ul class="dark">
+                <li>
+                    <a href="<?php echo url_for('/index.php'); ?>" >Enlace</a>
+                </li>
+                <li>
+                    <a href="<?php echo url_for('/guanajuato'); ?>" >Guanajuato</a>
+                </li>
+                <li>
+                <a href="<?php echo url_for('/mexico'); ?>" >Mexico</a>
+                </li>
+                <li>
+                <a href="<?php echo url_for('/tri-cities'); ?>" >TriCities</a>
+                </li>
+            </ul>
+        </nav>
+    <br>
+    <br>
+    <br>
+<?php }
     include($content);
     $footer = PROJECT_PATH . '/shared/footer.php';
     include($footer);

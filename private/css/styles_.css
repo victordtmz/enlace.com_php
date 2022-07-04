@@ -70,7 +70,7 @@
     background-color: #001a35;
 }
 
-.nav-links{
+.nav-menu{
     background-color: #001a35;
   } 
 
@@ -437,7 +437,7 @@
     padding: 2px 0;
   }
   
-  .nav-links{
+  .nav-menu{
     list-style: none;
     justify-content: space-around;
     position: absolute;
@@ -452,7 +452,7 @@
     transition: transform 0.5s ease-in;
   } 
   
-  .nav-links li a{
+  .nav-menu li a{
     font-size: 1.2rem;
     letter-spacing: 1px;
     font-weight: 500;
@@ -722,7 +722,7 @@
     }
   } */
   @media screen and (min-width:600px){
-    .nav-links{
+    .nav-menu{
       position: relative;
       flex-direction: row;
       transform: translateX(0%);
@@ -770,7 +770,7 @@
    
   
   @media screen and (min-width:900px){
-    .nav-links{
+    .nav-menu{
       max-width: 300px;
     }
     .sub-nav{

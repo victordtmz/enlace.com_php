@@ -53,6 +53,7 @@ h6{
 a{
     color: #c95a00;
     text-decoration: none;
+    transition: 0.7s ease;
 }
 a:hover{
     color: #7EAED9;
