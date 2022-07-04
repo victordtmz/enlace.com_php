@@ -95,7 +95,37 @@ a:hover .icon-fill-area{
 }
 
 
-
+/* ICON LIST
+-------------------------------------------- */
+.icon-list{
+  display: flex;
+  /* grid-template-columns: 50% 50%; */
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  /* text-align: center;  */
+  /* align-content: center; */
+  flex-direction: column;
+  justify-content: space-around;
+}
+.icon-list-item{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border: 2px solid #003975;
+  padding: .2rem .5rem;
+  border-style: inset;
+  width: 90%;
+  
+}
+.icon-list-item .icon{
+  width: 25px;
+  color: #003975;
+}
+.icon-list-item h6{
+  color: #003975;
+  font-weight: 600;
+}
 
 @media screen and (min-width:600px){
     .img-item{
@@ -105,6 +135,12 @@ a:hover .icon-fill-area{
         text-align: left;
       
       }
+    .icon-list{
+      flex-direction: row;
+    }
+    .icon-list-item{
+      width: 48%;
+    }
 
   /* .icon-text-items{
     flex-wrap: wrap;
@@ -132,3 +168,11 @@ a:hover .icon-fill-area{
   width: 30%;
 }
 }
+
+@media screen and (min-width:1020px){
+  
+
+  .icon-list-item{
+    width: 30%;
+  }
+  }
