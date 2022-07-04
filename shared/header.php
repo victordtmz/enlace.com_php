@@ -53,7 +53,7 @@
  
 <body>
 <header> 
-    <nav class="nav-main dark">
+    <nav class="nav-main dark"> 
       <div class="logo">
           <img src="<?php echo url_for('private\images\logo.png'); ?>" alt="enlaceLLC">
       </div>
