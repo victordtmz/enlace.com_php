@@ -12,9 +12,8 @@
     }
     //render links for pages for developer mode
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
-            <nav class="nav-main">
-                
-                <ul class="nav-links dark">
+            <nav class="">
+                <ul class="dark">
                     <li>
                         <a href="<?php echo url_for('/index.php'); ?>" >Enlace</a>
                     </li>
