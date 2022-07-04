@@ -54,27 +54,22 @@ a:hover h5{
 } */
 .icon-text-items{
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  
+
 }
 .icon-text{
-  /* display: flex; */
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
-  /* gap: .5rem; */
-  width: 30%;
+  width: 90%;
   transition: .3s;
   border-width: 1px;
   border-style: solid;
-  /* border-radius: 10px; */
   border-top-right-radius: 10px;
   padding: 1rem;
-  /* box-shadow: 2px 2px 2px #c95a00; */
-  
 }
-/* .icon-text:hover{
-  box-shadow: 2px 2px 2px #7EAED9;
-  
-} */
+
 .icon-title{
   display: flex;
   align-items: center;
@@ -110,4 +105,30 @@ a:hover .icon-fill-area{
         text-align: left;
       
       }
+
+  /* .icon-text-items{
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: center;
+    
   }
+  .icon-text{
+    width: 30%;
+  } */
+}
+
+@media screen and (min-width:900px){
+  
+
+.icon-text-items{
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: center;
+  
+}
+.icon-text{
+  width: 30%;
+}
+}
