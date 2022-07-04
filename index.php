@@ -41,3 +41,4 @@
     // $server = $_SERVER['REMOTE_ADDR'];
     // echo $server;
 ?> 
+</div>
