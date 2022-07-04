@@ -53,6 +53,7 @@
 </head>
  
 <body>
+    <div class="main-body">
 <header> 
     <nav class="nav-main dark"> 
       <div class="logo">
