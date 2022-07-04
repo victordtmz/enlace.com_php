@@ -13,6 +13,7 @@
             'trials/divorcio' => 'Divorcio',
             'index' => 'Inicio',
             'contact' => 'Contacto',
+            'translations/index' => 'Traducciones',
             default => ''
         };
     }else{ 
@@ -26,6 +27,8 @@
             'trials/index' => 'Trials',
             'index' => 'Home',
             'contact' => 'Contact',
+            'translations/index' => 'Translations',
+
             default => ''
         };
     }
@@ -46,6 +49,7 @@
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/dark.css'); ?>">
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/styles.css'); ?>">
     <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/header_footer.css'); ?>">
+    <link rel="stylesheet" media="all" href="<?php echo url_for('private/css/widgets.css'); ?>">
     <link rel="icon" type="images/x-icon" href="<?php echo url_for('private/images/enlace.ico'); ?>">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Franklin&display=swap" rel="stylesheet">
     <script src="<?php echo url_for('private/js/header.js'); ?>" defer></script>

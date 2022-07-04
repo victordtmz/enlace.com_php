@@ -1,0 +1,113 @@
+/* IMAGE ITEMS WITH TEXT
+----------------------------------------------------- */
+
+a h5{
+    color: #c95a00;
+}
+a:hover h5{
+    color: #7EAED9;
+  }
+.img-item{
+    display: flex;
+    padding: 1rem 0;
+    margin: 0 0 2rem 0;
+    align-items: center;
+    flex-direction: column;
+    transition: all 2s ease-in;
+    /* color: #213942; */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.7);
+    max-width: 700px;
+  }
+
+.img-item:hover img{
+    width: 200;
+    opacity: 1;
+    vertical-align: middle;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    
+  }
+
+  .img-item img{
+    margin-left: 1rem;
+    opacity: .8;
+    width: 190px;
+    vertical-align: middle;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    transition: all .5s ease-in;
+  }
+
+  .img-item div{/*h5 and p*/
+    display: inline-block;
+    margin: 0 10px;
+    max-width: 500px;
+    align-items: center;
+    text-align: center;
+  
+  }
+
+
+/* ICON WIDGET
+-------------------------------------------- */
+/* .icon-text{
+  width: 30%;
+} */
+.icon-text-items{
+  display: flex;
+  justify-content: space-between;
+}
+.icon-text{
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+  /* gap: .5rem; */
+  width: 30%;
+  transition: .3s;
+  border-width: 1px;
+  border-style: solid;
+  /* border-radius: 10px; */
+  border-top-right-radius: 10px;
+  padding: 1rem;
+  /* box-shadow: 2px 2px 2px #c95a00; */
+  
+}
+/* .icon-text:hover{
+  box-shadow: 2px 2px 2px #7EAED9;
+  
+} */
+.icon-title{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+/* .icon-text p{
+  flex-basis: 100%;
+  
+} */
+.icon{
+  width: 35px;
+  /* display: inline-block; */
+}
+/* .icon-text h5{ */
+  /* display: inline-block; */
+  /* align-self: center; */
+/* } */
+a .icon-fill-area{
+  fill: #c95a00;
+}
+a:hover .icon-fill-area{
+  fill: #7EAED9;
+}
+
+
+
+
+@media screen and (min-width:600px){
+    .img-item{
+        flex-direction: row;
+    }
+    .img-item div{/*h5 and p*/
+        text-align: left;
+      
+      }
+  }
