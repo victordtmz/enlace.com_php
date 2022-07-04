@@ -6,7 +6,8 @@
 
 body{
     margin: 0; 
-    padding: 0;  
+    padding: 0;   
+    overflow-x: hidden;
 }
 
 p, h1, h2, h3, h4, h5, h6{
@@ -52,11 +53,10 @@ a:hover{
     max-width: 1300px;
     width: 98%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem .5rem;
   }
 
 .title {
-  position: -webkit-sticky;
   /* background-color: #001a35; */
   background: rgba(0, 26, 53, 0.8);
   padding: 4rem 0;
@@ -65,8 +65,12 @@ a:hover{
   justify-content: center;
   flex-direction: column;
   }
+  .title h4{
+    text-align: center;
+  }
   .title *{
     color: #ebe6e3;
+    
     }
 
 .content{
@@ -206,7 +210,7 @@ a:hover h5{
     background: rgba(0, 26, 53, 0.8);
     /* background-color: #7EAED9; */
     padding: 2rem 2rem;
-    width: 98%;
+    width:100%;
     margin: 1rem auto;
     border-radius: 20px;
     max-width: 700px;
@@ -306,4 +310,10 @@ a:hover h5{
         text-align: left;
       
       }
+  }
+
+  @media screen and (min-width:900px){
+    .content_wrap{
+      padding: 2rem;
+    }
   }
