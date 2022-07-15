@@ -1,10 +1,10 @@
 <?php 
     require_once('../private/initialize.php'); 
-    $language = $_SESSION['language'];
+    $current_language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index'; 
     $website = 'tri-cities';
-    $_SESSION['website'] = 'tri-cities';
-    $page_path = '/' . $language . '/' . $page . '.php';
+    $_SESSION['website'] = $website;
+    $page_path = '/' . $current_language . '/' . $page . '.php';
     $content = TRI_CITIES_PAGES_PATH . $page_path;
     if (!file_exists($content)){
         $content = PAGES_PATH . $page_path;
@@ -44,7 +44,7 @@
     $header = PROJECT_PATH . '/shared/header.php';
     include($header);
     // Render content
-    // $content = PAGES_PATH . '/' . $language . '/' . $page . '.php';
+    // $content = PAGES_PATH . '/' . $current_language . '/' . $page . '.php';
     include($content);
 
     // Render Footer. 
