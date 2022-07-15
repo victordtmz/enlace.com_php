@@ -14,6 +14,8 @@
             'index' => 'Inicio',
             'contact' => 'Contacto',
             'translations/index' => 'Traducciones',
+            'apostille/index' => 'Apostillas',
+            'notary/index' => 'Notario',
             default => ''
         };
     }else{ 
@@ -28,6 +30,8 @@
             'index' => 'Home',
             'contact' => 'Contact',
             'translations/index' => 'Translations',
+            'apostille/index' => 'Apostilles',
+            'notary/index' => 'Notary',
 
             default => ''
         };

@@ -9,7 +9,8 @@
     if (!file_exists($content)){
         $content = PAGES_PATH . $page_path;
         if (!file_exists($content)){
-            redirect_to(url_for('index.php'));
+            // this will look at the session to see what page(tri-cities) we are in. 
+            redirect_to(set_url_for('index.php'));
         }
     }
     if (str_starts_with(PRIVATE_PATH, 'C:\\')){ ?>
@@ -18,6 +19,7 @@
                 
                 <ul class="nav-menu dark">
                     <li>
+                        <!-- url_for will set url regardles of website -->
                         <a href="<?php echo url_for('/index.php') ?>" >Enlace</a>
                     </li>
                     <li>
