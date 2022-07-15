@@ -1,9 +1,9 @@
 <?php  
     // require_once(PROJECT_PATH . '/shared/header_head.php'); 
-    $current_language = $_SESSION['language'];
+    $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     
-    if($current_language == 'es'){
+    if($language == 'es'){
         $alternate_language = 'en';
         $title = match ($page){
             // Idioma actual español
@@ -43,7 +43,7 @@
     
 
 <!DOCTYPE html> 
-<html lang="<?php echo $current_language; ?>">
+<html lang="<?php echo $language; ?>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,15 +70,15 @@
       <ul class="nav-menu dark">
         <li class="<?php if($page == 'index') {echo 'selected';} ?>">
             <a href="<?php echo set_url_for('/index.php?page=index') ?>" ><?php
-            if($current_language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
+            if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
         </li>
         <li class="<?php if($page == 'contact') {echo 'selected';} ?>">
             <a href="<?php echo set_url_for('/index.php?page=contact') ?>" ><?php
-            if($current_language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
+            if($language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
         </li>
         <li>
             <a href="<?php echo set_url_for('/set_language.php?lan=' . $alternate_language . '&page=' . $page); ?>"><?php
-            if($current_language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
+            if($language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
         </li>
       </ul>
       <div class="burger">
@@ -95,7 +95,7 @@
 <section class="sub-header dark" >
     <h1>Enlace LLC</h1>
     <h2>
-        <?php if($current_language == 'en'){
+        <?php if($language == 'en'){
             echo 'International Services Provider';
         } else{
             echo 'Despacho de Servicios Internacionales';

@@ -2,7 +2,7 @@
     $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     if($language == 'es'){
-        $new_language = 'en';
+        $alternate_language = 'en';
         $title = match ($page){
             'immigration/I-130' => 'I-130',
             'immigration/index' => 'Migratorios',
@@ -12,7 +12,7 @@
             default => ''
         };
     }else{
-        $new_language = 'es';
+        $alternate_language = 'es';
         
         $title = match ($page){
             'immigration/I-130' => 'I-130',
@@ -57,7 +57,7 @@
             if($language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
         </li>
         <li>
-            <a href="<?php echo url_for('guanajuato/set_language.php?lan=' . $new_language . '&page=' . $page); ?>"><?php
+            <a href="<?php echo url_for('guanajuato/set_language.php?lan=' . $alternate_language . '&page=' . $page); ?>"><?php
             if($language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
         </li>
       </ul>
