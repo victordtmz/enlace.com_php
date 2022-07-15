@@ -48,8 +48,8 @@
     include($content);
 
     // Render Footer. 
-    $footer = PROJECT_PATH . '/shared/footer.php';
+    $footer = PROJECT_PATH . '/tri-cities/shared/footer.php';
     include($footer);
     // $server = $_SERVER['REMOTE_ADDR'];
     // echo $server;
-?> 
+?>  

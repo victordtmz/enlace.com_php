@@ -1,10 +1,10 @@
 <?php  
     // require_once(PROJECT_PATH . '/shared/header_head.php'); 
-    $language = $_SESSION['language'];
+    $current_language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     
-    if($language == 'es'){
-        $new_language = 'en';
+    if($current_language == 'es'){
+        $alternate_language = 'en';
         $title = match ($page){
             // Idioma actual español
             'immigration/I-130' => 'I-130',
@@ -19,7 +19,7 @@
             default => ''
         };
     }else{ 
-        $new_language = 'es';
+        $alternate_language = 'es';
         
         $title = match ($page){
             //idioma actual inglés
@@ -43,7 +43,7 @@
     
 
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="<?php echo $current_language; ?>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,15 +70,15 @@
       <ul class="nav-menu dark">
         <li class="<?php if($page == 'index') {echo 'selected';} ?>">
             <a href="<?php echo set_url_for('/index.php?page=index') ?>" ><?php
-            if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
+            if($current_language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
         </li>
         <li class="<?php if($page == 'contact') {echo 'selected';} ?>">
             <a href="<?php echo set_url_for('/index.php?page=contact') ?>" ><?php
-            if($language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
+            if($current_language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
         </li>
         <li>
-            <a href="<?php echo set_url_for('/set_language.php?lan=' . $new_language . '&page=' . $page); ?>"><?php
-            if($language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
+            <a href="<?php echo set_url_for('/set_language.php?lan=' . $alternate_language . '&page=' . $page); ?>"><?php
+            if($current_language == 'es'){ echo 'English';}else{echo 'Español';} ?></a>
         </li>
       </ul>
       <div class="burger">
@@ -95,7 +95,7 @@
 <section class="sub-header dark" >
     <h1>Enlace LLC</h1>
     <h2>
-        <?php if($language == 'en'){
+        <?php if($current_language == 'en'){
             echo 'International Services Provider';
         } else{
             echo 'Despacho de Servicios Internacionales';

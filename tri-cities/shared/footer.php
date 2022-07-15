@@ -30,8 +30,8 @@
           <p>Kennewick, WA 99336</p>
           <a href="tel:+15096190838"> <p>(509)-619-0838</p></a>
         </div>
+        &copy;<?php echo date('Y'); ?> | Enlace LLC
       </div>
-      &copy;<?php echo date('Y'); ?> | Enlace LLC
     </footer>
   </body>
 </html>
