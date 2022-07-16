@@ -11,6 +11,8 @@
             'immigration/index' => 'Migratorios',
             'trials/index' => 'Juicios',
             'trials/divorcio' => 'Divorcio',
+            'trials/marriage' => 'Matrimonio',
+
             'index' => 'Inicio',
             'contact' => 'Contacto',
             'translations/index' => 'Traducciones',
@@ -27,6 +29,7 @@
             'immigration/index' => 'Immigration',
             'trials/divorcio' => 'Divorce',
             'trials/index' => 'Trials',
+            'trials/marriage' => 'Marriage',
             'index' => 'Home',
             'contact' => 'Contact',
             'translations/index' => 'Translations',
