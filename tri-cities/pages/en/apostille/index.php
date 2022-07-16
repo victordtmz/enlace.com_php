@@ -55,8 +55,8 @@
             </div>
         </div>
         <p>Once the process is complete, you can pick up your documents directly in our office or request to have them sent directly to your address, you decide.</p><br>
-        <p>For more information, <a href="<?php echo set_url_for('/index.php?page=contact') ?>" >contact us </a> through this site, <a href="mailto:admin@enlacellc.com">send us an email</a>  or <a href="tel:+15096190838">give us a call</a> , we will be happy to assist you. </p>
+        <p>For more information, <a href="<?php echo set_url_for('/index.php?page=contact) ?>" >contact us </a> through this site, <a href="mailto:admin@enlacellc.com">send us an email</a>  or <a href="tel:+15096190838">give us a call</a> , we will be happy to assist you. </p>
     </div>
     </div>
 
-</section>
+</section> 

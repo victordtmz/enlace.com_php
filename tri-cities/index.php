@@ -1,6 +1,7 @@
 <?php 
     require_once('../private/initialize.php'); 
     // $language = $_SESSION['language'];
+    $language = $_GET['lan'] ?? 'es';
     $page = $_GET['page'] ?? 'index'; 
     $website = 'tri-cities';
     $_SESSION['website'] = $website;

@@ -55,7 +55,7 @@
             </div>
         </div>
         <p>Una vez que concluye tu trámite, puedes recoger tus documentos en nuestras oficinas o pedir que sean entregados directamente en tu domicilio, tú decides.</p><br>
-        <p>Para más información comunícate con nosotros en la sección de <a href="<?php echo set_url_for('/index.php?page=contact') ?>" >contacto</a> de nuestra página, envíanos un <a href="mailto:admin@enlacellc.com">correo electrónico</a>  o <a href="tel:+15096190838">llámanos</a> , con gusto te atendemos. </p>
+        <p>Para más información comunícate con nosotros en la sección de <a href="<?php echo set_url_for('/index.php?page=contact&lan=' . $language) ?>" >contacto</a> de nuestra página, envíanos un <a href="mailto:admin@enlacellc.com">correo electrónico</a>  o <a href="tel:+15096190838">llámanos</a> , con gusto te atendemos. </p>
     </div>
     </div>
 

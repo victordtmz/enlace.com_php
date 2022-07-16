@@ -49,11 +49,11 @@
       </div>
       <ul class="nav-menu dark">
         <li class="<?php if($page == 'index') {echo 'selected';} ?>">
-            <a href="<?php echo url_for('tri-cities/index.php?page=index') ?>" ><?php
+            <a href="<?php echo url_for('tri-cities/index.php?page=index&lan=' . $language) ?>" ><?php
             if($language == 'es'){ echo 'Inicio';}else{echo 'Home';} ?></a>
         </li>
         <li class="<?php if($page == 'contact') {echo 'selected';} ?>">
-            <a href="<?php echo url_for('tri-cities/index.php?page=contact') ?>" ><?php
+            <a href="<?php echo url_for('tri-cities/index.php?page=contact&lan=' . $language) ?>" ><?php
             if($language == 'es'){ echo 'Contacto';}else{echo 'Contact';} ?></a>
         </li>
         <li>

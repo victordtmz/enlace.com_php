@@ -7,7 +7,7 @@
         $p = 'If you have any matters that must be heard in a court in Mexico, we han help.';
     }
 ?>
-<a class="img-item" href="<?php echo set_url_for('/index.php?page=trials/index') ?>">
+<a class="img-item" href="<?php echo set_url_for('/index.php?page=trials/index&lan=' . $language) ?>">
     <img src="<?php echo url_for('private\images\ii\juicios.jpg'); ?>" alt="">
     <div>
         <h5><?php echo $h5 ?></h5>

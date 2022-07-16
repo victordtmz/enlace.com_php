@@ -7,7 +7,7 @@
         <div class="sec-items">
         
             <?php 
-                include(SHARED_PAGES . '/es/img-items/residencia.php');
+                include(SHARED_PAGES . '/img-items/residencia.php');
             ?>
 
         </div>

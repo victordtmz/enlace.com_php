@@ -8,7 +8,7 @@
         $p = 'Get the Apostille of your official documents for use in your country';
     }
 ?>
-<a class="img-item" href="<?php echo set_url_for('/index.php?page=apostille/index') ?>">
+<a class="img-item" href="<?php echo set_url_for('/index.php?page=apostille/index&lan=' . $language) ?>">
     <img src="<?php echo url_for('private\images\ii\apostille.jpg'); ?>" alt="">
     <div>
         <h5><?php echo $h5 ?></h5>

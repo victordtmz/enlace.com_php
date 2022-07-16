@@ -49,7 +49,7 @@
         </div>
 
         <div class="img-item">
-            <a href="<?php echo url_for('/index.php?page=trials/index') ?>">
+            <a href="<?php echo url_for('/index.php?page=trials/index&lan=' . $language) ?>">
             <img src="<?php echo url_for('private\images/giammarco-OPzWvgL-upY-unsplash.jpg'); ?>" alt="">
             <div>
             <h5>Trials in Mexico</h5>

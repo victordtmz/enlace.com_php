@@ -1,4 +1,4 @@
-<a class="img-item" href="<?php echo set_url_for('/index.php?page=immigration/i-130') ?>">
+<a class="img-item" href="<?php echo set_url_for('/index.php?page=immigration/i-130&lan=' . $language) ?>">
     <img src="<?php echo url_for('private\images\ii\residencia.jpg'); ?>" alt="">
     <div>
         <h5>Residencia Permanente</h5>
