@@ -1,7 +1,7 @@
 <?php
     // require_once('../initialize.php'); 
     // Include requred php mailer files
-    $language = $_SESSION['language'] ?? 'es';
+    // $language = $_SESSION['language'] ?? 'es';
     include(PRIVATE_PATH . '/phpMailer/src/Exception.php');
     include(PRIVATE_PATH . '/phpMailer/src/PHPMailer.php');
     include(PRIVATE_PATH . '/phpMailer/src/SMTP.php');

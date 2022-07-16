@@ -1,6 +1,6 @@
 <?php  
     // require_once(PROJECT_PATH . '/shared/header_head.php'); 
-    $language = $_SESSION['language'];
+    // $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     
     if($language == 'es'){

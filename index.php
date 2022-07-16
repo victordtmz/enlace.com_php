@@ -1,7 +1,7 @@
 <?php 
     require_once('private/initialize.php'); 
     //default language set in initilize as spanish, unless _COOKIE has ben set
-    $language = $_SESSION['language'];
+    // $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     $_SESSION['website'] = 'enlace';
 

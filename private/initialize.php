@@ -41,10 +41,15 @@
     require_once(SHARED_PATH . '/credentials.php');
 
     
+    // if(isset($_COOKIE['language'])){
+    //     $_SESSION['language'] = $_COOKIE['language'];
+    // }else {
+    //     $_SESSION['language'] = 'es';
+    // }
     if(isset($_COOKIE['language'])){
-        $_SESSION['language'] = $_COOKIE['language'];
+        $language = $_COOKIE['language'];
     }else {
-        $_SESSION['language'] = 'es';
+        $language = 'es';
     }
     
     $menu_home = array(

@@ -1,5 +1,5 @@
 <?php  
-    $language = $_SESSION['language'];
+    // $language = $_SESSION['language'];
     $page = $_GET['page'] ?? 'index';
     if($language == 'es'){
         $alternate_language = 'en';
