@@ -4,4 +4,4 @@
     $language = $_GET['lan'];
     $page = $_GET['page'];
     setcookie('language', $language, time()+60*60*24*365); 
-    redirect_to(url_for('tri-cities/index.php?page=' . $page . '&lan=' . $language));
+    redirect_to(set_url_for('/index.php?page=' . $page . '&lan=' . $language));
