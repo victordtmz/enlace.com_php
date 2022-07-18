@@ -1,5 +1,5 @@
 <?php
-    function set_url_for($url){
+    function set_url_for($url){ 
         if ($_SESSION['website'] == 'enlace'){
             $www_root = WWW_ENLACE;
         }elseif ($_SESSION['website'] == 'guanajuato'){

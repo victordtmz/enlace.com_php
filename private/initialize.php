@@ -28,9 +28,9 @@
         $_SESSION['mode'] = 'developer';
     }else{
         define("WWW_ENLACE", 'https://enlacellc.com');
-        define("WWW_TRI", 'https://tri-cities.enlacellc.com/');
-        define("WWW_MX", 'https://mexico.enlacellc.com/');
-        define("WWW_GTO", 'https://guanajuato.enlacellc.com/');
+        define("WWW_TRI", 'https://tri-cities.enlacellc.com');
+        define("WWW_MX", 'https://mexico.enlacellc.com');
+        define("WWW_GTO", 'https://guanajuato.enlacellc.com');
         $_SESSION['mode'] = 'live';
     }
 
